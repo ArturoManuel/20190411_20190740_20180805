@@ -14,41 +14,15 @@
 <body>
     <!--Navbar-->
     <jsp:include page="/includes/navbar.jsp">
-        <jsp:param name="page" value="inicio"/>
-    </jsp:include>
-
-<div id="page">
-    <div id="header">
-
-        <img src="logozombie.png" width="300px" height="70px " align="left"/>
-
-        <div align="right">
-            <table cellpadding="15px" cellspacing="15px">
-                <tr>
-                    <td>
-                        <a  class="fcc-btn"  href="supervivientes.html">Supervivientes</a>
-                    </td>
-                    <td>
-                        <a  class="fcc-btn"  href="zombie.html">Zombies</a>
-                    </td>
-                    <td>
-                        <a class="fcc-btn"  href="zombie.html">Virus</a>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>
-</div>
-
 
 <!-- Banner presentación -->
 <div class="slider_carr">
 
     <ul>
-        <li><img  src="fondo4.jpg" alt=""></li>
-        <li><img  src="fondo5.jpg" alt=""></li>
-        <li><img  src="fondo4.jpg" alt=""></li>
-        <li><img  src="fondo5.jpg" alt=""></li>
+        <li><img  src="resources/images/fondo4.jpg" alt=""></li>
+        <li><img  src="resources/images/fondo5.jpg" alt=""></li>
+        <li><img  src="resources/images/fondo4.jpg" alt=""></li>
+        <li><img  src="resources/images/fondo5.jpg" alt=""></li>
     </ul>
 
 </div>
@@ -57,3 +31,4 @@
 
 
 </body>
+</html>

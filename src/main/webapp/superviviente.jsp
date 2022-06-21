@@ -12,9 +12,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title> Apocalipsis Zombie</title>
     <!-- CSS Personales-->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="styles_super.css">
-    <link rel="stylesheet" href="carrusel.css">
+    <link rel="stylesheet" href=" resources/css/styles.css">
+    <link rel="stylesheet" href="resources/css/styles_super.css">
+    <link rel="stylesheet" href="respirces/css/carrusel.css">
 </head>
 
 <body>
@@ -22,7 +22,7 @@
 <div id="page">
     <div id="header">
 
-        <img src="logozombie.png" width="300px" height="70px " align="left"/>
+        <img src="resources/images/logozombie.png" width="300px" height="70px " align="left"/>
 
         <div align="right">
 
@@ -42,7 +42,7 @@
         </div>
     </div>
 </div>
-<div>
+
 
     <br>
     <center>
@@ -50,10 +50,9 @@
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                  width="2500" height="1000" viewBox="0 0 2500 1000">
                 <rect x="165" y="165" width="1000" height="8000"
-                      fill="#2f2f2f"
-
-                <p style="color:#FF0000";> Lista de </p>/>
+                      fill="#2f2f2f"/>
             </svg>
         </div>
+        </center>
 </body>
 </html>
