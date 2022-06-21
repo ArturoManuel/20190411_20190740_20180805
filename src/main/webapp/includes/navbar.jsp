@@ -1,33 +1,27 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!--Navbar-->
-<head>
-    <link rel="stylesheet" href="resources/css/styles.css">
-</head>
-<body>
-<nav>
-    <div id="page">
-        <div id="header">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark">
 
-            <img src="logozombie.png" width="300px" height="70px " align="left"/>
+    <img src="images/logozombie.png" width="300px" height="80px " align="left"/>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
 
-            <div align="right">
-                <table cellpadding="15px" cellspacing="15px">
-                    <tr>
-                        <td>
-                            <a  class="fcc-btn"  href="supervivientes.html">Supervivientes</a>
-                        </td>
-                        <td>
-                            <a  class="fcc-btn"  href="zombie.html">Zombies</a>
-                        </td>
-                        <td>
-                            <a class="fcc-btn"  href="zombie.html">Virus</a>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
+           <ul class="navbar-nav">
+               <li class="nav-item">
+                   <a class="nav-link <%=request.getParameter("page").equals("tours")? "active": "" %>" href="<%=request.getContextPath()%>/Supervivientes"><b>Supervivientes</b></a>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link <%=request.getParameter("page").equals("bandas")? "active": "" %>" href="<%=request.getContextPath()%>/Zombies"><b>Zombies</b></a>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link <%=request.getParameter("page").equals("tpc")? "active": "" %>" href="<%=request.getContextPath()%>/Virus"><b>Virus</b></a>
+               </li>
+           </ul>
+
+
     </div>
-
 </nav>
-</body>
 

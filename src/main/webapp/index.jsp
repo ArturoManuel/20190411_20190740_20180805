@@ -7,28 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title> Apocalipsis Zombie</title>
     <!-- CSS Personales-->
-    <link rel="stylesheet" href="resources/css/styles.css">
-    <link rel="stylesheet" href="resources/css/carrusel.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/carrusel.css">
 </head>
-
 <body>
-    <!--Navbar-->
-    <jsp:include page="/includes/navbar.jsp">
 
+<jsp:include page="/includes/head.jsp">
+    <jsp:param name="title" value="index"/>
+</jsp:include>
+
+<!--Navbar-->
+<jsp:include page="/includes/navbar.jsp">
+    <jsp:param name="page" value=""/>
+</jsp:include>
 <!-- Banner presentación -->
 <div class="slider_carr">
-
     <ul>
-        <li><img  src="resources/images/fondo4.jpg" alt=""></li>
-        <li><img  src="resources/images/fondo5.jpg" alt=""></li>
-        <li><img  src="resources/images/fondo4.jpg" alt=""></li>
-        <li><img  src="resources/images/fondo5.jpg" alt=""></li>
+        <li><img src="images/fondo4.jpg" alt=""></li>
+        <li><img src="images/fondo5.jpg" alt=""></li>
+        <li><img src="images/fondo4.jpg" alt=""></li>
+        <li><img src="images/fondo5.jpg" alt=""></li>
     </ul>
-
 </div>
-<!-- -->
-
-
-
+<!---->
 </body>
 </html>

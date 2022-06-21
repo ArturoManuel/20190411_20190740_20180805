@@ -12,47 +12,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title> Apocalipsis Zombie</title>
     <!-- CSS Personales-->
-    <link rel="stylesheet" href=" resources/css/styles.css">
-    <link rel="stylesheet" href="resources/css/styles_super.css">
-    <link rel="stylesheet" href="respirces/css/carrusel.css">
+    <link rel="stylesheet" href="css/styles_super.css">
+
 </head>
 
+
+<jsp:include page="/includes/head2.jsp">
+    <jsp:param name="title" value="index"/>
+</jsp:include>
+
+<!--Navbar-->
+<jsp:include page="/includes/navbar.jsp">
+    <jsp:param name="page" value=""/>
+</jsp:include>
 <body>
+<STYLE TYPE="text/css">
+    body{
+        font-family: Arial;
+    }
+    #main-container{
+        margin: 10px ;
+        width: 1200px;
+    }
+    table{
+        background-color: white;
+        text-align: center;
+        border-collapse: collapse;
+        width: 100%;
+        position: static;
+        left: 100%;
+        margin-left: 75px;
+        top: 300%;
+        margin-top: 1px;
+    }
+    th, td{
+        padding: 20px;
+    }
+    thead{
+        background-color: #1db954;
+        border-bottom: solid 5px #0F362D;
+        color: white;
+    }
+    tr:nth-child(even){
+        background-color: #ddd;
+    }
+    tr:hover td{
+        background-color: #57f77c;
+        color: white;
+    }
 
-<div id="page">
-    <div id="header">
+</STYLE>
+ <br>
+<br> <br>
+<br> <br>
+<br> <br>
 
-        <img src="resources/images/logozombie.png" width="300px" height="70px " align="left"/>
-
-        <div align="right">
-
-            <table cellpadding="15px" cellspacing="15px">
-                <tr>
-                    <td>
-                        <a class="fcc-btn"  href="supervivientes.html">Supervivientes</a>
-                    </td>
-                    <td>
-                        <a  class="fcc-btn"  href="zombie.html">Zombies</a>
-                    </td>
-                    <td>
-                        <a class="fcc-btn"  href="zombie.html">Virus</a>
-                    </td>
-                </tr>
-            </table>
-        </div>
+<center>
+    <h1><b><font color="white">LISTA DE SUPERVIVIENTES</font> </b></h1>
+</center>
+    <div id="main-container" align="left">
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th><th>Nombre</th><th>Fuerza</th><th>Peso</th><th>ID pareja</th>
+            </tr>
+            </thead>
+            <tr>
+                <td>12345</td><td>xdd</td><td>10</td><td>70</td><td>idk</td>
+            </tr>
+            <tr>
+                <td>12346</td><td>xdd</td><td>14</td><td>80</td><td>idk</td>
+            </tr>
+            <tr>
+                <td>12347</td><td>xdd</td><td>14</td><td>55</td><td>idk</td>
+            </tr>
+        </table>
     </div>
-</div>
 
 
-    <br>
-    <center>
-        <div>
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                 width="2500" height="1000" viewBox="0 0 2500 1000">
-                <rect x="165" y="165" width="1000" height="8000"
-                      fill="#2f2f2f"/>
-            </svg>
-        </div>
-        </center>
+
+
+
+
 </body>
 </html>
