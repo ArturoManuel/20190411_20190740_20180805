@@ -12,6 +12,10 @@
 </head>
 
 <body>
+    <!--Navbar-->
+    <jsp:include page="/includes/navbar.jsp">
+        <jsp:param name="page" value="inicio"/>
+    </jsp:include>
 
 <div id="page">
     <div id="header">
