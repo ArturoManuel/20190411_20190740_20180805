@@ -1,28 +1,26 @@
 .slider_carr {
     width: 100%;
-    margin: auto;
+    margin-top: 0px;
     overflow: hidden;
-
 }
 
 .slider_carr ul {
     display: flex;
     padding: 0;
     width: 400%;
+    animation: cambio_carr 20s infinite;
 
-    animation: cambio_carr 15s infinite;
 }
 
 .slider_carr li {
     width: 100%;
     list-style: none;
-
 }
 
 .slider_carr img {
-
     width: 100%;"
 }
+
 @keyframes cambio_carr {
 
     0% {margin-left: 0%;}
