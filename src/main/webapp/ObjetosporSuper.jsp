@@ -73,7 +73,7 @@
     function cerrarDelete() {
         document.getElementById("dele").style.display="none";
     }
-</script
+</script>
 
 </body>
 </html>
