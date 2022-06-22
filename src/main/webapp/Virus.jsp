@@ -44,8 +44,6 @@
 <div id="main-container" align="left">
     <table>
         <thead>
-
-
         <tr>
             <th>ID Virus</th><th>Virus</th><th>ID Variante </th><th>Variante</th><th>Casos Encontrados</th><th>Erradicar variante</th>
         </tr>
@@ -64,9 +62,6 @@
             <img width="30px" height="30px" src="images/x.png"></a></td>
         </tr>
         </tr>
-
-
-
     </table>
 </div>
 <center>

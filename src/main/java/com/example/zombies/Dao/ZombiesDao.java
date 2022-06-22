@@ -1,6 +1,7 @@
 package com.example.zombies.Dao;
 
 import com.example.zombies.Bean.BHumanos;
+import com.example.zombies.Bean.BSupervivientes;
 import com.example.zombies.Bean.BVariante;
 import com.example.zombies.Bean.BZombies;
 
@@ -19,8 +20,8 @@ public class ZombiesDao extends BaseDao {
             "group by h.numeroId;\n" +
             ";";
 
-    public ArrayList<BZombies> listaZombies(){
-        ArrayList<BZombies> listazombies=new ArrayList<>();
+    public ArrayList<BZombies> listasZombies(){
+        ArrayList<BZombies> litazombies=new ArrayList<>();
         try (Connection conn = this.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql_select);) {
             try (ResultSet rs = pstmt.executeQuery()) {
@@ -39,7 +40,7 @@ public class ZombiesDao extends BaseDao {
                     BHumanos humano= new BHumanos(numeroid,nombre,apellido,sexo);
                     BZombies zombies = new  BZombies(tiempo_infectado,variante,victimas,tipo_zombie,humano);
 
-                    listazombies.add(zombies);
+                    litazombies.add(zombies);
                     System.out.println(zombies.getTiempo_infectados());
                 }
             }
@@ -48,39 +49,8 @@ public class ZombiesDao extends BaseDao {
             e.printStackTrace();
         }
 
-        public boolean añadirSuperviviente(datetime tiempo_infectados, int fuerza , long id,long id2){
-            try (Connection conn = this.getConnection();
-                 PreparedStatement pstmt = conn.prepareStatement(sql_añadir_superviviente);) {
 
-                pstmt.setDouble(1, peso);
-                pstmt.setInt(2, fuerza);
-                pstmt.setLong(3, id);
-                System.out.println(id);
-                pstmt.setLong(4,id2);
-                System.out.println(id2);
-                pstmt.executeUpdate();
-
-            } catch (SQLException e) {
-                e.printStackTrace();
-                return false;
-            }
-            return true;
-        }
-
-        return listazombies;
-    }
-
-    public boolean delete(long id2){
-        try (Connection conn = this.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql_delete);) {
-            pstmt.setDouble(1, id2);
-            pstmt.executeUpdate();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        }
-        return true;
+        return litazombies;
     }
 
 }
