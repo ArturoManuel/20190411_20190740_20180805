@@ -123,6 +123,8 @@
             href="javascript:abrir()"
     >Añadir Superviviente</a>
 
+    <br><br>
+    <br>
 
     <div class="editar" id="edit">
         <div id="cerrarEditar"><a href="javascript:cerrarEditar()"><img width="20px" height="20px" src="images/x.png"></a></div>

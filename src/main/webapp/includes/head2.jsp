@@ -238,6 +238,38 @@
              left:33%;
              display: none;
          }
+        .virus {
+
+            Background: #525252;
+            width:30%;
+            color:#dddddd;
+            font-family: Arial;
+            font-size: 18px;
+            text-align:center;
+            padding: 33px;
+            min-height: 150px;
+            border-radius: 10px;
+            top:30%;
+            position: fixed;
+            left:33%;
+            display: none;
+        }
+        .zombie {
+
+            Background: #525252;
+            width:30%;
+            color:#dddddd;
+            font-family: Arial;
+            font-size: 18px;
+            text-align:center;
+            padding: 33px;
+            min-height: 250px;
+            border-radius: 10px;
+            top:20%;
+            position: fixed;
+            left:33%;
+            display: none;
+        }
         .editar {
 
             Background: #525252;
