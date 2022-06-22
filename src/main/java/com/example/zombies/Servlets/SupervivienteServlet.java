@@ -98,7 +98,7 @@ public class SupervivienteServlet extends HttpServlet {
                 int fuerza = Integer.parseInt(request.getParameter("fuerza"));
                 BHumanos humano = new BHumanos(nombre,apellido, sexo, estado);
                 BHumanos humano2 = new BHumanos(nombre2,apellido2, sexo2, estado);
-                long id_numero1=humanos.crearHumano(humano);
+                long id_numero1=humanos.crearHumano( humano);
                 long id_numero2=humanos.crearHumano(humano2);
                 double peso2 =0;
                 int fuerza2 = 0;
