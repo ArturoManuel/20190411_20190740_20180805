@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class HumanoDao extends BaseDao{
 
-    private static String sql_inset="insert into humanos (numeroId,nombre,apellido,estado,numeroIdo,sexo) values (?,?,?,?,?);";
+    private static String sql_inset="insert into humanos (numeroId,nombre,apellido,estado,sexo) values (?,?,?,?,?);";
     private static String sql_select="select numeroId,nombre,apellido,estado,sexo from humanos;";
     public  ArrayList<BHumanos> listaHumanos(){
         ArrayList<BHumanos> listaHumanos=new ArrayList<>();
@@ -39,23 +39,28 @@ public class HumanoDao extends BaseDao{
 
 
 
-    public  boolean crearHumano(BHumanos humanos) {
+    public  long crearHumano(BHumanos humanos) {
 
+        long numero_id;
         try (Connection conn = this.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql_inset);) {
-            pstmt.setLong(1,humanos.getNumero_identificación());
-            pstmt.setString(2,humanos.getNombre());
-            pstmt.setString(3,humanos.getApellido());
-            pstmt.setString(4,humanos.getEstado());
-            pstmt.setString(5,humanos.getSexo());
+            numero_id = (long) (1e9 + Math.random() * 9 * 1e9);
+            pstmt.setLong(1, numero_id);
+            pstmt.setString(2, humanos.getNombre());
+            pstmt.setString(3, humanos.getApellido());
+            pstmt.setString(4, humanos.getEstado());
+            pstmt.setString(5, humanos.getSexo());
+            System.out.println("aqui");
             pstmt.executeUpdate();
 
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
+            return 0;
         }
-        return true;
+        return numero_id;
     }
+
+
 
 
 }

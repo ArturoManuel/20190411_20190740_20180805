@@ -10,8 +10,19 @@ public class BSupervivientes {
 
     private double peso_cargado;
 
-
     public BSupervivientes() {
+    }
+
+    public BSupervivientes(double peso, int fuerza) {
+        this.peso = peso;
+        this.fuerza = fuerza;
+    }
+
+    public BSupervivientes(double peso, int fuerza, BHumanos humanos, BHumanos pareja) {
+        this.peso = peso;
+        this.fuerza = fuerza;
+        this.humanos = humanos;
+        this.pareja = pareja;
     }
 
     public BSupervivientes(double peso, int fuerza, BHumanos humanos, BHumanos pareja, double peso_cargado) {

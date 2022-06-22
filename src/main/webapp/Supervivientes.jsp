@@ -6,8 +6,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page import="com.example.zombies.Bean.BSupervivientes" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.lang.String" %>
 <jsp:useBean id="listasupervivientes" scope="request" type="java.util.ArrayList<com.example.zombies.Bean.BSupervivientes>"/>
+<jsp:useBean id="listaGeneros" scope="request" type="java.util.ArrayList<java.lang.String>"/>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 
 <html>
 <head>
@@ -36,26 +40,22 @@
 <br> <br>
 
 <center>
+
     <h2><b><font color="white"><mark >LISTA DE SUPERVIVIENTES</mark></font> </b></h2>
     <br>
     <!--FILTRAR-->
     <div class="col-md-10 d-none d-md-block ps-0">
-        <div class="input-group" align="center">
-            <div style="width: 16%">
-                <input
-                        type="search"
-                        id="buscador_producto"
-                        class="form-control"
-                        placeholder="Filtrar por sexo"
-                />
-            </div>
-            <a
-                    role="button"
-                    class="btn btn-tele border-start-1"
-                    href="SupervivienteServlet"
-            >
-                Filtrar</a>
-        </div>
+            <form class="input-group" align="center" action="<%=request.getContextPath()%>/Supervivientes?action=filtrar">
+                <select style="width: 16%" class="form-select" name="filtrado" id="filtrado" required>
+                    <option value="" disabled hidden selected>Sexo</option>
+                    <% for(String s : listaGeneros) { %>
+                    <option  value="<%=s%>"><%=s%></option>
+                    <% } %>
+                </select>
+
+                <button class="btn btn-tele border-start-1" type="submit">Añadir </button>
+            </form>
+
     </div>
     <br>
 </center>
@@ -66,6 +66,7 @@
                 <th>ID</th><th>Nombre y Apellido</th><th>Sexo</th><th>Peso</th><th>Fuerza</th><th>Pareja</th><th>Peso cargado</th><th>Objetos</th><th>Editar</th><th>Eliminar</th>
             </tr>
             </thead>
+
             <%for (BSupervivientes s : listasupervivientes){%>
             <tr>
                 <td><%=s.getHumanos().getNumero_identificación()%></td>
@@ -88,19 +89,32 @@
         <div id="cerrar"><a href="javascript:cerrar()"><img width="20px" height="20px" src="images/x.png"></a></div>
         REGISTRAR
         <center>
-            <form style="width: 70%">
-                <input type="text" id="id_super" class="form-control" placeholder="N° de ID"/>
-                <input type="text" id="nombres" class="form-control" placeholder="Nombres"/>
-                <input type="text" id="apellidos" class="form-control" placeholder="Apellidos"/>
-                <input type="text" id="sexo" class="form-control" placeholder="Sexo"/>
-                <input type="text" id="peso" class="form-control" placeholder="Peso (kg)"/>
-                <input type="text" id="fuerza" class="form-control" placeholder="Fuerza (N)"/>
-                <input type="text" id="pareja" class="form-control" placeholder="Pareja(nombre y apellido)"/>
-                <input type="text" id="peso cargado" class="form-control" placeholder="Peso cargado(kg)"/>
+            <form style="width: 70%" method="post" action="<%=request.getContextPath()%>/Supervivientes?action=añadir">
+                <input type="text" name="nombre" id="nombres" class="form-control" placeholder="Nombres"/>
+                <input type="text" name="apellido" id="apellidos" class="form-control" placeholder="Apellidos"/>
+                <select class="form-select" name="sexo" id="sexo" required>
+                    <option value="" disabled hidden selected>Sexo</option>
+                    <% for(String s : listaGeneros) { %>
+                    <option value="<%=s%>"><%=s%></option>
+                    <% } %>
+                </select>
+                <input type="text" name="peso" id="peso" class="form-control" placeholder="Peso (kg)"/>
+                <input type="text" name="fuerza" id="fuerza" class="form-control" placeholder="Fuerza (N)"/>
+                <input type="text" name="nombre2" id="pareja" class="form-control" placeholder="Pareja(nombre)"/>
+                <input type="text" name="apellido2" id="pareja2" class="form-control" placeholder="Pareja(apellido)"/>
+                <select class="form-select" name="sexo2" id="sexo2" required>
+                    <option value="" disabled hidden selected>Sexo</option>
+                    <% for(String s : listaGeneros) { %>
+                    <option value="<%=s%>"><%=s%></option>
+                    <% } %>
+                </select>
+                <br>
+                <button class="btn btn-tele border-start-1" type="submit">Añadir </button>
+
             </form>
 
         </center>
-        <div><button class="btn btn-tele border-start-1" type="submit">Añadir </button></div>
+        <div></div>
 
     </div>
     <a  type="submit"
@@ -132,10 +146,10 @@
             <h5>¿Está seguro que desea elimina al superviviente?</h5>
                 <br>
         </center>
-        <div><a  type="submit"
-                 role="button"
+        <div><button  type="submit"
+                 name="delete"
                  class="btn btn-tele border-start-1"
-                 href="javascript:cerrarDelete()"> Eliminar </a></div>
+                 href="javascript:cerrarDelete()"> Eliminar </button></div>
 
     </div>
 </center>
