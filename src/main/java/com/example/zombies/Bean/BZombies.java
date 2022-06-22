@@ -7,7 +7,7 @@ public class BZombies extends BHumanos{
     private String tipo_zombie;
 
 
-    public BZombies(int numero_identificación, String nombre, String apellido, String sexo, String estado, String tiempo_infectados, String variante_virus, int victimas, String tipo_zombie) {
+    public BZombies(long numero_identificación, String nombre, String apellido, String sexo, String estado, String tiempo_infectados, String variante_virus, int victimas, String tipo_zombie) {
         super(numero_identificación, nombre, apellido, sexo, estado);
         this.tiempo_infectados = tiempo_infectados;
         this.variante_virus = variante_virus;

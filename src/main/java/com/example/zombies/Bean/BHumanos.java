@@ -1,7 +1,7 @@
 package com.example.zombies.Bean;
 
 public class BHumanos {
-    private  int numero_identificación;
+    private  long numero_identificación;
     private String nombre;
     private String apellido;
     private String sexo;
@@ -11,7 +11,7 @@ public class BHumanos {
     public BHumanos() {
     }
 
-    public BHumanos(int numero_identificación, String nombre, String apellido, String sexo, String estado) {
+    public BHumanos(long numero_identificación, String nombre, String apellido, String sexo, String estado) {
         this.numero_identificación = numero_identificación;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -19,11 +19,11 @@ public class BHumanos {
         this.estado = estado;
     }
 
-    public int getNumero_identificación() {
+    public long getNumero_identificación() {
         return numero_identificación;
     }
 
-    public void setNumero_identificación(int numero_identificación) {
+    public void setNumero_identificación(long numero_identificación) {
         this.numero_identificación = numero_identificación;
     }
 
