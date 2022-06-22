@@ -2,12 +2,13 @@ package com.example.zombies.Bean;
 
 public class BObjetos {
     private String nombre;
-    private String cantidad;
+    private int cantidad;
     private int peso;
     private String tipo;
 
-    public BObjetos(String nombre, int peso, String tipo) {
+    public BObjetos(String nombre, int cantidad, int peso, String tipo) {
         this.nombre = nombre;
+        this.cantidad = cantidad;
         this.peso = peso;
         this.tipo = tipo;
     }
@@ -20,11 +21,11 @@ public class BObjetos {
         this.nombre = nombre;
     }
 
-    public String getCantidad() {
+    public int getCantidad() {
         return cantidad;
     }
 
-    public void setCantidad(String cantidad) {
+    public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
 
