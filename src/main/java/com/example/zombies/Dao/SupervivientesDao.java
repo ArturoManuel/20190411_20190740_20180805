@@ -39,6 +39,7 @@ public class SupervivientesDao extends BaseDao{
                     String nombre_pareja = rs.getString(7);
                     String apellido_pareja = rs.getString(8);
                     double pesocargado=rs.getDouble(9);
+                    System.out.println(pesocargado);
 
                     BHumanos humano= new BHumanos(numeroid,nombre,apellido,sexo);
                     BHumanos pareja = new BHumanos(nombre_pareja,apellido_pareja);
@@ -46,9 +47,7 @@ public class SupervivientesDao extends BaseDao{
                     BSupervivientes supervivientes = new BSupervivientes(peso,fuerza,humano,pareja,pesocargado);
 
                     litasupervivientes.add(supervivientes);
-
-
-
+                    System.out.println(supervivientes.getPeso_cargado());
                 }
             }
 

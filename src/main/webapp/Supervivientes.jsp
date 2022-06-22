@@ -70,13 +70,13 @@
             <%for (BSupervivientes s : listasupervivientes){%>
             <tr>
                 <td><%=s.getHumanos().getNumero_identificación()%></td>
-                <td><%=s.getHumanos().getNombre()+s.getHumanos().getApellido()%></td>
-                <td><%=s.getPareja().getNombre()+s.getPareja().getApellido()%></td>
-                <td><%=s.getFuerza()%></td>
+                <td><%=s.getHumanos().getNombre()+" "+s.getHumanos().getApellido()%></td>
+                <td><%=s.getHumanos().getSexo()%></td>
                 <td><%=s.getPeso()%></td>
+                <td><%=s.getFuerza()%></td>
+                <td><%=s.getPareja().getNombre()+" "+s.getPareja().getApellido()%></td>
                 <td><%=s.getPeso_cargado()%></td>
             </tr>
-
             <%}%>
 
         </table>
