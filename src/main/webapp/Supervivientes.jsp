@@ -63,10 +63,9 @@
         <table>
             <thead>
             <tr>
-                <th>ID</th><th>Nombre y Apellido</th><th>Sexo</th><th>Peso</th><th>Fuerza</th><th>Pareja</th><th>Peso cargado</th>
+                <th>ID</th><th>Nombre y Apellido</th><th>Sexo</th><th>Peso</th><th>Fuerza</th><th>Pareja</th><th>Peso cargado</th><th>Objetos</th><th>Editar</th>
             </tr>
             </thead>
-
             <%for (BSupervivientes s : listasupervivientes){%>
             <tr>
                 <td><%=s.getHumanos().getNumero_identificación()%></td>
@@ -76,9 +75,16 @@
                 <td><%=s.getFuerza()%></td>
                 <td><%=s.getPareja().getNombre()+" "+s.getPareja().getApellido()%></td>
                 <td><%=s.getPeso_cargado()%></td>
+                <td> <a role="button" class="btn btn-tele border-start-1"
+                       href="ObjetosporSuperServlet">
+                        ver objetos</a>  </td>
+                <td><a  type="submit"
+                        role="button"
+                        class="btn btn-tele border-start-1"
+                        href="javascript:abrirEditar()">
+                    Editar</a></td>
             </tr>
             <%}%>
-
         </table>
     </div>
 <center>
@@ -88,13 +94,14 @@
         REGISTRAR
         <center>
             <form style="width: 70%">
+                <input type="text" id="id_super" class="form-control" placeholder="N° de ID"/>
                 <input type="text" id="nombres" class="form-control" placeholder="Nombres"/>
-                <input type="search" id="apellidos" class="form-control" placeholder="Apellidos"/>
-                <input type="text" id="id_super" class="form-control" placeholder="n° de ID"/>
-                <input type="text" id="tiempoInfectado" class="form-control" placeholder="tiempo infectado"/>
-                <input type="text" id="varianteDeVirus" class="form-control" placeholder="variante de virus"/>
-                <input type="text" id="NdeVictimas" class="form-control" placeholder="n° de victimas"/>
-                <input type="text" id="TipodeZombie" class="form-control" placeholder="Tipo de Zombie"/>
+                <input type="text" id="apellidos" class="form-control" placeholder="Apellidos"/>
+                <input type="text" id="sexo" class="form-control" placeholder="Sexo"/>
+                <input type="text" id="peso" class="form-control" placeholder="Peso (kg)"/>
+                <input type="text" id="fuerza" class="form-control" placeholder="Fuerza (N)"/>
+                <input type="text" id="pareja" class="form-control" placeholder="Pareja(nombre y apellido)"/>
+                <input type="text" id="peso cargado" class="form-control" placeholder="Peso cargado(kg)"/>
             </form>
 
         </center>
@@ -105,9 +112,25 @@
             role="button"
             class="btn btn-tele border-start-1"
             href="javascript:abrir()"
-    >
-        Añadir Superviviente</a>
+    >Añadir Superviviente</a>
 
+
+    <div class="editar" id="edit">
+        <div id="cerrarEditar"><a href="javascript:cerrarEditar()"><img width="20px" height="20px" src="images/x.png"></a></div>
+        EDITAR
+        <center>
+            <form style="width: 70%">
+
+                <input type="text" id="nombresEdit" class="form-control" placeholder="Nombres"/>
+                <input type="text" id="pesoEdit" class="form-control" placeholder="Peso (kg)"/>
+                <input type="text" id="fuerzaEdit" class="form-control" placeholder="Fuerza (N)"/>
+                <input type="text" id="parejaEdit" class="form-control" placeholder="Pareja(nombre y apellido)"/>
+            </form>
+
+        </center>
+        <div><button class="btn btn-tele border-start-1" type="submit">Editar </button></div>
+
+    </div>
 </center>
 
 
@@ -121,14 +144,36 @@
        font-size: 18px;
        text-align:center;
        padding: 33px;
-       min-height: 300px;
+       min-height: 350px;
        border-radius: 10px;
        position: absolute;
        left:33%;
        top:30%;
        display: none;
    }
+   .editar {
+
+       Background: #525252;
+       width:35%;
+       color:#dddddd;
+       font-family: Arial;
+       font-size: 18px;
+       text-align:center;
+       padding: 33px;
+       min-height: 250px;
+       border-radius: 10px;
+       position: absolute;
+       left:33%;
+       top:30%;
+       display: none;
+   }
+
    #cerrar {
+       position:absolute;
+       right:4px;
+       top:2px
+   }
+   #cerrarEditar{
        position:absolute;
        right:4px;
        top:2px
@@ -140,6 +185,12 @@
     }
     function cerrar() {
         document.getElementById("vent").style.display="none";
+    }
+    function abrirEditar() {
+        document.getElementById("edit").style.display="block";
+    }
+    function cerrarEditar() {
+        document.getElementById("edit").style.display="none";
     }
 </script>
 
