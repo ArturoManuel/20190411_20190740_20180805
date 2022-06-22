@@ -2,14 +2,15 @@ package com.example.zombies.Bean;
 
 public class BVirus {
     private int id_virus;
-    private String virus;
-    private int variante;
+    private String nombre_virus;
 
 
-    public BVirus(int id_virus, String virus, int variante) {
+    public BVirus() {
+    }
+
+    public BVirus(int id_virus, String nombre_virus) {
         this.id_virus = id_virus;
-        this.virus = virus;
-        this.variante = variante;
+        this.nombre_virus = nombre_virus;
     }
 
     public int getId_virus() {
@@ -20,19 +21,11 @@ public class BVirus {
         this.id_virus = id_virus;
     }
 
-    public String getVirus() {
-        return virus;
+    public String getNombre_virus() {
+        return nombre_virus;
     }
 
-    public void setVirus(String virus) {
-        this.virus = virus;
-    }
-
-    public int getVariante() {
-        return variante;
-    }
-
-    public void setVariante(int variante) {
-        this.variante = variante;
+    public void setNombre_virus(String nombre_virus) {
+        this.nombre_virus = nombre_virus;
     }
 }

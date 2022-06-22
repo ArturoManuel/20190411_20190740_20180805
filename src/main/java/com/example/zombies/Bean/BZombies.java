@@ -2,13 +2,23 @@ package com.example.zombies.Bean;
 
 public class BZombies {
     private String tiempo_infectados;
-    private String variante_virus;
+    private BVariante variante_virus;
     private int victimas;
     private String tipo_zombie;
 
+    private BHumanos humanos;
 
 
+    public BZombies() {
+    }
 
+    public BZombies(String tiempo_infectados, BVariante variante_virus, int victimas, String tipo_zombie, BHumanos humanos) {
+        this.tiempo_infectados = tiempo_infectados;
+        this.variante_virus = variante_virus;
+        this.victimas = victimas;
+        this.tipo_zombie = tipo_zombie;
+        this.humanos = humanos;
+    }
 
     public String getTiempo_infectados() {
         return tiempo_infectados;
@@ -18,11 +28,11 @@ public class BZombies {
         this.tiempo_infectados = tiempo_infectados;
     }
 
-    public String getVariante_virus() {
+    public BVariante getVariante_virus() {
         return variante_virus;
     }
 
-    public void setVariante_virus(String variante_virus) {
+    public void setVariante_virus(BVariante variante_virus) {
         this.variante_virus = variante_virus;
     }
 
@@ -40,5 +50,13 @@ public class BZombies {
 
     public void setTipo_zombie(String tipo_zombie) {
         this.tipo_zombie = tipo_zombie;
+    }
+
+    public BHumanos getHumanos() {
+        return humanos;
+    }
+
+    public void setHumanos(BHumanos humanos) {
+        this.humanos = humanos;
     }
 }

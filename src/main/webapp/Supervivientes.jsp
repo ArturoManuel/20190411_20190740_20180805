@@ -75,14 +75,8 @@
                 <td><%=s.getFuerza()%></td>
                 <td><%=s.getPareja().getNombre()+" "+s.getPareja().getApellido()%></td>
                 <td><%=s.getPeso_cargado()%></td>
-                <td> <a role="button" class="btn btn-tele border-start-1"
-                       href="ObjetosporSuperServlet">
-                        ver objetos</a>  </td>
-                <td><a  type="submit"
-                        role="button"
-                        class="btn btn-tele border-start-1"
-                        href="javascript:abrirEditar()">
-                    Editar</a></td>
+                <td> <a role="button" class="btn btn-tele border-start-1" href="ObjetosporSuperServlet"> ver objetos</a>  </td>
+                <td><a  type="submit" role="button" class="btn btn-tele border-start-1" href="javascript:abrirEditar()">Editar</a></td>
             </tr>
             <%}%>
         </table>
