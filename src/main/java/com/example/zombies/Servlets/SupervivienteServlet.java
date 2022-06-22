@@ -37,8 +37,9 @@ public class SupervivienteServlet extends HttpServlet {
 
             case "borrar":
                 long id = Long.parseLong(request.getParameter("id"));
-                System.out.println("aqui llegamos");
+                supervivientesDao.update(id);
                 supervivientesDao.delete(id);
+                supervivientesDao.update2(id);
                 response.sendRedirect(request.getContextPath() + "/Supervivientes");
 
                 break;

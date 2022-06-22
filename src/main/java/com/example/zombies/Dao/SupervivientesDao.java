@@ -37,6 +37,38 @@ public class SupervivientesDao extends BaseDao {
             " ;";
     private String sql_delete="DELETE from supervivientes where numeroId = ?;";
 
+    private String sql_update="Update objetos set numeroId=null where numeroId = ?;";
+
+    private String sql_update2="Update supervivientes set idPareja = null\n" +
+            "\twhere idPareja = ?;";
+
+
+    public boolean update2(long id2){
+        try (Connection conn = this.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql_update2);) {
+            pstmt.setDouble(1, id2);
+            pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+    public boolean update(long id2){
+        try (Connection conn = this.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql_update);) {
+            pstmt.setDouble(1, id2);
+            pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
     public ArrayList<BSupervivientes> listaSupervivientes() {
         ArrayList<BSupervivientes> litasupervivientes = new ArrayList<>();
         try (Connection conn = this.getConnection();
