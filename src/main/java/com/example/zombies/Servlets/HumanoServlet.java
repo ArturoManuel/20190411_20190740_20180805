@@ -9,7 +9,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(name = "HumanoServlet", urlPatterns ={ "/HumanoServlet",""})
+@WebServlet(name = "HumanoServlet", urlPatterns ={ "/Humanos",""})
 public class HumanoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
