@@ -4,6 +4,12 @@ public class BVariante {
     private String nombre ;
     private BVirus virus;
 
+
+    public BVariante(int idVariante, String nombre) {
+        this.idVariante = idVariante;
+        this.nombre = nombre;
+    }
+
     public BVariante(int idVariante) {
         this.idVariante = idVariante;
     }

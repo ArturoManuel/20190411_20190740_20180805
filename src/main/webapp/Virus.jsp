@@ -6,6 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="com.example.zombies.Bean.BVariante" language="java" %>
+<%@ page import="com.example.zombies.Bean.BVirus" %>
+<jsp:useBean id="listasvirus" scope="request" type="java.util.ArrayList<com.example.zombies.Bean.BVirus>"/>
 <html>
 <head>
     <meta charset="utf-8">
@@ -46,13 +49,18 @@
         </tr>
         </thead>
         <tr>
-            <td>12345</td><td>xdd</td><td>idk</td><td>idk</td><td>idk</td><td> <a href="javascript:abrirDelete()"><img width="30px" height="30px" src="images/x.png"></a></td>
+
+            <% for (BVirus bVirus: listavirus) %>
+
+                        <td>
+                12345</td>
+            <td>xdd</td>
+            <td>idk</td>
+            <td>idk</td>
+            <td>idk</td>
+            <td> <a href="javascript:abrirDelete()">
+            <img width="30px" height="30px" src="images/x.png"></a></td>
         </tr>
-        <tr>
-            <td>12346</td><td>xdd</td><td>idk</td><td>idk</td><td>idk</td><td> <a href="javascript:abrirDelete()"><img width="30px" height="30px" src="images/x.png"></a></td>
-        </tr>
-        <tr>
-            <td>12347</td><td>xdd</td><td>idk</td><td>idk</td><td>idk</td><td> <a href="javascript:abrirDelete()"><img width="30px" height="30px" src="images/x.png"></a></td>
         </tr>
     </table>
 </div>
