@@ -134,13 +134,19 @@
             border-radius: .25rem;
             transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
         }
-        /*Boton Telefarma*/
+
 
         .btn-tele {
             border-color: #1db954;
             background-color: #1db954;
             color: white;
         }
+        .btn-eliminar {
+            border-color: #b91d1d;
+            background-color: #b91d1d;
+            color: white;
+        }
+
 
         .btn-tele:hover {
             color: #fff;
@@ -210,6 +216,8 @@
         .show > .btn-tele-inverso.dropdown-toggle:focus {
             box-shadow: 0 0 0 0.2rem #57f77c;
         }
+
+
 
         /*Desactivar sombra de botones*/
 
