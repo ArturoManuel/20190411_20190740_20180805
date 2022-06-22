@@ -36,7 +36,8 @@
     <h2><b><font color="white"><mark >OBJETOS DE XDDDD</mark></font> </b></h2>
     <br>
 </center>
-<div id="main-container" align="left">
+<div id="main-container" >
+    <center></center>
     <table>
         <thead>
         <tr>
@@ -47,10 +48,7 @@
             <td>idk</td><td>idk</td><td>idk</td> <td>idk</td><td> <a href="javascript:abrirDelete()"><img width="30px" height="30px" src="images/x.png"></a></td>
         </tr>
 
-
-
-
-    </table>
+    </table></center>
 </div>
 <div class="delete" id="dele">
     <center>
@@ -63,7 +61,6 @@
              href="javascript:cerrarDelete()"> Eliminar </a></div>
 
 </div>
-
 
 <script>
 

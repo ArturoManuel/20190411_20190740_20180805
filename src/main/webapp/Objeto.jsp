@@ -35,23 +35,25 @@
 <center>
     <h2><b><font color="white"><mark >LISTA DE OBJETOS</mark></font> </b></h2>
 </center>
-<div id="main-container" align="left">
+
+<div id="main-container" >
+    <center>
     <table>
         <thead>
         <tr>
-            <th>Nombre del objeto</th><th>Peso</th><th>Tipo de Vacuna</th>
+            <th>Nombre del objeto</th><th>Peso</th><th>Tipo de Vacuna</th><th>Editar</th>
         </tr>
         </thead>
         <tr>
-            <td>idk</td><td>idk</td><td>idk</td>
+            <td>idk</td><td>idk</td><td>Vacuna </td><td> <a  type="submit" role="button" class="btn btn-tele border-start-1" href="javascript:abrirEditar()">Editar</a></td>
         </tr>
         <tr>
-            <td>idk</td><td>idk</td><td>idk</td>
+            <td>idk</td><td>idk</td><td>normal</td><td> <a  type="submit" role="button" class="btn btn-tele border-start-1" href="javascript:abrirEditar()">Editar</a></td>
         </tr>
         <tr>
-            <td>idk</td><td>idk</td><td>idk</td><td>idk</td>
+            <td>idk</td><td>idk</td><td>Vacuna</td><td> <a  type="submit" role="button" class="btn btn-tele border-start-1" href="javascript:abrirEditar()">Editar</a></td>
         </tr>
-    </table>
+    </table></center>
 </div>
 
 

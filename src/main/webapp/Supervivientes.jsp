@@ -56,8 +56,9 @@
 
     </div>
     <br>
-</center>
-    <div id="main-container" align="left">
+
+    <div id="main-container" >
+        <center>
         <table>
             <thead>
             <tr>
@@ -79,7 +80,7 @@
                 <td><a class="btn btn-eliminar border-start-1" href="<%=request.getContextPath()%>/Supervivientes?action=borrar&id=<%=s.getHumanos().getNumero_identificación()%>">Borrar</a></td>
             </tr>
             <%}%>
-        </table>
+        </table></center>
     </div>
 <center>
     <br>
