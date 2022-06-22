@@ -178,8 +178,6 @@ public class SupervivientesDao extends BaseDao {
 
 
 
-
-
     public ArrayList<String> listaGeneros (){
         ArrayList<String> listaGeneros = new ArrayList<>();
         listaGeneros.add("M");

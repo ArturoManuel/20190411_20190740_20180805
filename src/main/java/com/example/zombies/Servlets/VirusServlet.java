@@ -18,6 +18,7 @@ public class VirusServlet extends HttpServlet {
         VirusDao virusDao = new VirusDao();
         ArrayList<BVirus> listasvirus= virusDao.listaVirus();
         request.setAttribute("listasvirus",listasvirus);
+        request.setAttribute("virus_activos",virusDao.cantidad_virus());
         RequestDispatcher view= request.getRequestDispatcher("Virus.jsp");
         view.forward(request,response);
 
