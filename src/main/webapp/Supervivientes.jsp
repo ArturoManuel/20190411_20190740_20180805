@@ -5,9 +5,10 @@
   Time: 23:56
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="com.example.zombies.Bean.BSupervivientes" %>
 <jsp:useBean id="listasupervivientes" scope="request" type="java.util.ArrayList<com.example.zombies.Bean.BSupervivientes>"/>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <meta charset="utf-8">
@@ -68,12 +69,12 @@
 
             <%for (BSupervivientes s : listasupervivientes){%>
             <tr>
-                <td><%=s.getHumano().getNumero_identificación()%></td>
-                <td><%=s.getHumano().getNombre()+s.getHumano().getApellido()%></td>
+                <td><%=s.getHumanos().getNumero_identificación()%></td>
+                <td><%=s.getHumanos().getNombre()+s.getHumanos().getApellido()%></td>
                 <td><%=s.getPareja().getNombre()+s.getPareja().getApellido()%></td>
                 <td><%=s.getFuerza()%></td>
                 <td><%=s.getPeso()%></td>
-                <td><%=s.getPesocargado()%></td>
+                <td><%=s.getPeso_cargado()%></td>
             </tr>
 
             <%}%>

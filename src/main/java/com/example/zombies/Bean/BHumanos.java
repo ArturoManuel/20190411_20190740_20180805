@@ -11,6 +11,18 @@ public class BHumanos {
     public BHumanos() {
     }
 
+    public BHumanos(String nombre, String apellido) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+
+    public BHumanos(long numero_identificación, String nombre, String apellido, String sexo) {
+        this.numero_identificación = numero_identificación;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.sexo = sexo;
+    }
+
     public BHumanos(long numero_identificación, String nombre, String apellido, String sexo, String estado) {
         this.numero_identificación = numero_identificación;
         this.nombre = nombre;

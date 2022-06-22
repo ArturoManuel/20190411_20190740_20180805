@@ -2,25 +2,31 @@ package com.example.zombies.Bean;
 
 public class BSupervivientes {
 
-    private int peso;
+    private double peso;
     private int fuerza;
 
     private  BHumanos humanos;
     private BHumanos pareja ;
 
+    private double peso_cargado;
 
-    public BSupervivientes(int peso, int fuerza, BHumanos humanos, BHumanos pareja) {
+
+    public BSupervivientes() {
+    }
+
+    public BSupervivientes(double peso, int fuerza, BHumanos humanos, BHumanos pareja, double peso_cargado) {
         this.peso = peso;
         this.fuerza = fuerza;
         this.humanos = humanos;
         this.pareja = pareja;
+        this.peso_cargado = peso_cargado;
     }
 
-    public int getPeso() {
+    public double getPeso() {
         return peso;
     }
 
-    public void setPeso(int peso) {
+    public void setPeso(double peso) {
         this.peso = peso;
     }
 
@@ -46,5 +52,13 @@ public class BSupervivientes {
 
     public void setPareja(BHumanos pareja) {
         this.pareja = pareja;
+    }
+
+    public double getPeso_cargado() {
+        return peso_cargado;
+    }
+
+    public void setPeso_cargado(double peso_cargado) {
+        this.peso_cargado = peso_cargado;
     }
 }
