@@ -9,6 +9,7 @@
 <%@ page import="com.example.zombies.Bean.BVariante" language="java" %>
 <%@ page import="com.example.zombies.Bean.BVirus" %>
 <jsp:useBean id="listasvirus" scope="request" type="java.util.ArrayList<com.example.zombies.Bean.BVirus>"/>
+<jsp:useBean id="virus_activos" scope="request" type="java.lang.Integer"/>
 <html>
 <head>
     <meta charset="utf-8">
@@ -39,7 +40,7 @@
     <h2><b><font color="white"><mark >LISTA DE VIRUS</mark></font> </b></h2>
     <br>
 </center>
-<h4><b><font color="white"><mark> Cantidad de virus activo:  xddd</mark></font> </b></h4>
+<h4><b><font color="white"><mark> Cantidad de virus activo:<%=virus_activos%></mark></font> </b></h4>
 <br>
 <div id="main-container" align="left">
     <table>
@@ -49,17 +50,17 @@
         </tr>
         </thead>
         <tr>
-
-            <% for (BVirus bVirus: listavirus) %>
-
-                        <td>
-                12345</td>
-            <td>xdd</td>
-            <td>idk</td>
-            <td>idk</td>
-            <td>idk</td>
+                <%for (BVirus s : listasvirus){%>
+        <tr>
+            <td ><%=s.getId_virus()%></td>
+            <td><%=s.getNombre_virus()%></td>
+            <td><%=s.getVariante().getIdVariante()%></td>
+            <td><%=s.getVariante().getNombre()%></td>
+            <td><%=s.getCantidad()%></td>
             <td> <a href="javascript:abrirDelete()">
-            <img width="30px" height="30px" src="images/x.png"></a></td>
+                <img width="30px" height="30px" src="images/x.png"></a></td>
+        </tr>
+        <%}%>
         </tr>
         </tr>
     </table>

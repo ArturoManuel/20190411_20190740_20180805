@@ -5,10 +5,7 @@ import com.example.zombies.Bean.BSupervivientes;
 import com.example.zombies.Bean.BVariante;
 import com.example.zombies.Bean.BVirus;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class VirusDao extends BaseDao{
@@ -21,6 +18,7 @@ public class VirusDao extends BaseDao{
             " group by va.idVariante\n" +
             " order by va.idVariante\n" +
             " ;";
+    private String cantidad_virus="SELECT count(*) from virus;";
 
     public ArrayList<BVirus> listaVirus() {
 
@@ -46,9 +44,25 @@ public class VirusDao extends BaseDao{
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return litasvirus;
     }
+
+
+    public int cantidad_virus() {
+        try (Connection conn = this.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(cantidad_virus)) {
+            rs.next();
+            return rs.getInt(1);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+
+
 
 
 }
