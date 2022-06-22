@@ -5,11 +5,11 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "SupervivienteServlet", value = "/SupervivienteServlet")
-public class SupervivienteServlet extends HttpServlet {
+@WebServlet(name = "ObjetoServlet", value = "/ObjetoServlet")
+public class ObjetoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("Supervivientes.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("Objeto.jsp");
         requestDispatcher.forward(request,response);
     }
 

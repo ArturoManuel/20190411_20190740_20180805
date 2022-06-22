@@ -74,17 +74,17 @@
         <table>
             <thead>
             <tr>
-                <th>ID</th><th>Nombre</th><th>Fuerza</th><th>Peso</th><th>ID pareja</th>
+              <th>Peso</th><th>Fuerza</th><th>Pareja</th><th>Peso cargado</th>
             </tr>
             </thead>
             <tr>
-                <td>12345</td><td>xdd</td><td>10</td><td>70</td><td>idk</td>
+                <td>idk</td><td>idk</td><td>idk</td><td>idk</td>
             </tr>
             <tr>
-                <td>12346</td><td>xdd</td><td>14</td><td>80</td><td>idk</td>
+                <td>idk</td><td>idk</td><td>idk</td><td>idk</td>
             </tr>
             <tr>
-                <td>12347</td><td>xdd</td><td>14</td><td>55</td><td>idk</td>
+               <td>idk</td><td>idk</td><td>idk</td><td>idk</td>
             </tr>
         </table>
     </div>
