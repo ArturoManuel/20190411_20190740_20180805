@@ -289,7 +289,7 @@
             padding: 33px;
             min-height: 250px;
             border-radius: 10px;
-            top:30%;
+            top:20%;
             position: fixed;
             left:33%;
             display: none;
@@ -312,6 +312,11 @@
         }
 
         #cerrar {
+            position:absolute;
+            right:4px;
+            top:2px
+        }
+        #cerrar2 {
             position:absolute;
             right:4px;
             top:2px
