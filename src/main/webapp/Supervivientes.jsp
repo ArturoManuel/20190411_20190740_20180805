@@ -48,8 +48,8 @@
             <form class="input-group" align="center" action="<%=request.getContextPath()%>/Supervivientes?action=filtrar">
                 <select style="width: 16%" class="form-select" name="filtrado" id="filtrado" required>
                     <option value="" disabled hidden selected>Sexo</option>
-                    <option  value="F">Mujer</option>
-                    <option  value="H">Hombre</option>
+                    <option  value="F">Femenino</option>
+                    <option  value="M">Masculino</option>
                 </select>
                 <button class="btn btn-tele border-start-1" type="submit">Añadir </button>
             </form>
@@ -89,8 +89,8 @@
         REGISTRAR
         <center>
             <form style="width: 70%" method="post" action="<%=request.getContextPath()%>/Supervivientes?action=añadir">
-                <input type="text" name="nombre" id="nombres" class="form-control" placeholder="Nombres"/>
-                <input type="text" name="apellido" id="apellidos" class="form-control" placeholder="Apellidos"/>
+                <input type="text" name="nombre" id="nombres" class="form-control" placeholder="Nombres" required/>
+                <input type="text" name="apellido" id="apellidos" class="form-control" placeholder="Apellidos" required/>
                 <select class="form-control" name="sexo" id="sexo" required>
                     <option value="" disabled hidden selected>Sexo</option>
                     <% for(String s : listaGeneros) { %>
@@ -101,7 +101,7 @@
                 <input type="text" name="fuerza" id="fuerza" class="form-control" placeholder="Fuerza (N)"/>
                 <input type="text" name="nombre2" id="pareja" class="form-control" placeholder="Pareja(nombre)"/>
                 <input type="text" name="apellido2" id="pareja2" class="form-control" placeholder="Pareja(apellido)"/>
-                <select class="form-control" name="sexo2" id="sexo2"  required>
+                <select class="form-control" name="sexo2" id="sexo2"  >
                     <option value="" disabled hidden selected>Sexo</option>
                     <% for(String s : listaGeneros) { %>
                     <option value="<%=s%>"><%=s%></option>
