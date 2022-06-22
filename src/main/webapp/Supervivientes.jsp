@@ -56,9 +56,8 @@
 
     </div>
     <br>
-
-    <div id="main-container" >
-        <center>
+</center>
+    <div id="main-container" align="left">
         <table>
             <thead>
             <tr>
@@ -77,10 +76,11 @@
                 <td><%=s.getPeso_cargado()%></td>
                 <td> <a role="button" class="btn btn-tele border-start-1" href="ObjetosporSuperServlet"> ver objetos</a>  </td>
                 <td> <a  type="submit" role="button" class="btn btn-tele border-start-1" href="javascript:abrirEditar()">Editar</a></td>
-                <td><a class="btn btn-eliminar border-start-1" href="<%=request.getContextPath()%>/Supervivientes?action=borrar&id=<%=s.getHumanos().getNumero_identificación()%>">Borrar</a></td>
+                <td><a href="<%=request.getContextPath()%>/Supervivientes?action=borrar&id=<%=s.getHumanos().getNumero_identificación()%>">Borrar</a></td>
             </tr>
             <%}%>
-        </table></center>
+
+        </table>
     </div>
 <center>
     <br>

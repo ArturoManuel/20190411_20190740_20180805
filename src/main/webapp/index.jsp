@@ -84,7 +84,7 @@
         <%for (BHumanos h : listahumanos){%>
         <tr>
             <td><%=h.getNumero_identificación()%></td>
-            <td><%=h.getNombre()+h.getApellido()%></td>
+            <td><%=h.getNombre()+" "+h.getApellido()%></td>
             <td><%=h.getSexo()%></td>
             <td><%=h.getEstado()%></td>
         </tr>

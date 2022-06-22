@@ -5,6 +5,11 @@
   Time: 20:26
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page import="com.example.zombies.Bean.BZombies" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.lang.String" %>
+<jsp:useBean id="listazombies" scope="request" type="java.util.ArrayList<com.example.zombies.Bean.BZombies>"/>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -38,20 +43,31 @@
 </center>
 <div id="main-container" align="left">
     <table>
+
+
         <thead>
         <tr>
-            <th>ID</th><th>Nombre y Apellido </th><th>Sexo</th><th>Tiempo Infectado (horas)</th><th>Variente de Virus</th><th>Número de Víctimas </th><th>Tipo de Zombie</th>
+            <td>ID</td><td>Nombre y Apellido </td><td>Sexo</td><th>Tiempo Infectado (horas)</th><th>Variante de Virus</th><th>Número de Víctimas </th><th>Tipo de Zombie</th>
         </tr>
         </thead>
+
+
+        <%for (BZombies z : listazombies){%>
         <tr>
-            <td>idk</td><td>idk</td><td>idk</td> <td>xdd</td><td>idk</td><td>idk</td><td>idk</td>
+            <td><%=z.getHumanos().getNumero_identificación()%></td>
+            <td><%=z.getHumanos().getNombre()+" "+z.getHumanos().getApellido()%></td>
+            <td><%=z.getHumanos().getSexo()%></td>
+            <td><%=z.getTiempo_infectados()%></td>
+            <td><%=z.getVictimas()%></td>
+            <td><%=z.getTipo_zombie()%></td>
+            <td> <a role="button" class="btn btn-tele border-start-1" href="ObjetosporSuperServlet"> ver objetos</a>  </td>
+            <td> <a type="submit" role="button" class="btn btn-tele border-start-1" href="javascript:abrirEditar()">Editar</a></td>
+            <td> <a href="javascript:abrirDelete()"><img width="30px" height="30px" src="images/x.png"></a></td>
         </tr>
-        <tr>
-            <td>idk</td><td>idk</td><td>idk</td><td>xdd</td><td>idk</td><td>idk</td><td>idk</td>
-        </tr>
-        <tr>
-            <td>idk</td><td>idk</td><td>idk</td><td>xdd</td><td>idk</td><td>idk</td><td>idk</td>
-        </tr>
+        <%}%>
+
+
+
     </table>
 </div>
 <center>
@@ -98,63 +114,21 @@
     <div><button class="btn btn-tele border-start-1" type="submit">Añadir </button></div>
 
 </div>
-<div>
-<br> <br><br><br>
-    <h1><b><font color="white"><mark>ESTADÍSTICAS</mark></font> </b></h1>
-<br>
+
+
+
+
+
+
+
+
+
+
+
+
 <center>
-    <div id="Zombieporcentaje" align="left">
-        <table  style="width: 90%">
-            <thead>
-            <tr>
-                <th>Zombies</th><th>Cantidad(%)</th> <th>Víctimas(%)</th>
-            </tr>
-            </thead>
-            <tr>
-                <td>Zombies Hombres</td><td>x %</td><td>x %</td>
-            </tr>
-            <tr>
-                <td>Zombies Mujeres</td><td>x %</td><td>x %</td>
-            </tr>
-            <tr>
-                <td>Zombies Demoledor</td><td>x %</td><td>x %</td>
-            </tr>
-            <tr>
-                <td>Zombies Rápido</td><td>x %</td><td>x %</td>
-            </tr>
-            <tr>
-                <td>Zombies niño</td><td>x %</td><td>x %</td>
-            </tr>
-            <tr>
-                <td>Otro</td><td>x %</td><td>x %</td>
-            </tr>
-
-        </table>
-    </div>
-    <br><br>
-    <div id="estadisticasVirus" align="left">
-        <table  style="width: 90%">
-            <thead>
-            <tr>
-                <th>Variantes de virus</th><th>Porcentaje (%)</th>
-            </tr>
-            </thead>
-            <tr>
-                <td>Variante 1</td><td>x %</td>
-            </tr>
-
-
-        </table>
-    </div>
-    <br><br><br>
-
+    <h1><b><font color="white">ESTADÍSTICAS</font> </b></h1>
 </center>
-</div></div>
-
-
-
-
-
 
 <script>
     function abrir() {

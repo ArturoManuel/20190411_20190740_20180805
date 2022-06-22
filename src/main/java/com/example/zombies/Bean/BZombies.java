@@ -5,12 +5,8 @@ public class BZombies {
     private BVariante variante_virus;
     private int victimas;
     private String tipo_zombie;
-
     private BHumanos humanos;
 
-
-    public BZombies() {
-    }
 
     public BZombies(String tiempo_infectados, BVariante variante_virus, int victimas, String tipo_zombie, BHumanos humanos) {
         this.tiempo_infectados = tiempo_infectados;
