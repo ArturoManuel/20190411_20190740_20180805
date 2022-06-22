@@ -5,7 +5,7 @@ public class BSupervivientes extends BHumanos{
     private int peso;
     private int fuerza;
 
-    public BSupervivientes(int numero_identificación, String nombre, String apellido, String sexo, String estado, int peso, int fuerza) {
+    public BSupervivientes(long numero_identificación, String nombre, String apellido, String sexo, String estado, int peso, int fuerza) {
         super(numero_identificación, nombre, apellido, sexo, estado);
         this.peso = peso;
         this.fuerza = fuerza;

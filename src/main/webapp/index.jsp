@@ -1,4 +1,6 @@
+<%@ page import="com.example.zombies.Bean.BHumanos" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<jsp:useBean id="listahumanos" scope="request" type="java.util.ArrayList<com.example.zombies.Bean.BHumanos>"/>
 <!DOCTYPE html>
 
 <html>
@@ -79,15 +81,17 @@
             <th>ID</th><th>Nombre y Apellido</th><th>Sexo</th><th>Estado</th>
         </tr>
         </thead>
+        <%for (BHumanos h : listahumanos){%>
         <tr>
-            <td>12345</td><td>xdd</td><td>F</td><td>idk</td>
+            <td><%=h.getNumero_identificación()%></td>
+            <td><%=h.getNombre()+h.getApellido()%></td>
+            <td><%=h.getSexo()%></td>
+            <td><%=h.getEstado()%></td>
         </tr>
-        <tr>
-            <td>12346</td><td>xdd</td><td>M</td><td>idk</td>
-        </tr>
-        <tr>
-            <td>12347</td><td>xdd</td><td>M</td><td>idk</td>
-        </tr>
+
+        <%}%>
+
+
     </table>
 </div>
 </center>
