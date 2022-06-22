@@ -90,7 +90,7 @@
             <form style="width: 70%" method="post" action="<%=request.getContextPath()%>/Supervivientes?action=añadir">
                 <input type="text" name="nombre" id="nombres" class="form-control" placeholder="Nombres"/>
                 <input type="text" name="apellido" id="apellidos" class="form-control" placeholder="Apellidos"/>
-                <select class="form-select" name="sexo" id="sexo" required>
+                <select class="form-control" name="sexo" id="sexo" required>
                     <option value="" disabled hidden selected>Sexo</option>
                     <% for(String s : listaGeneros) { %>
                     <option value="<%=s%>"><%=s%></option>
@@ -100,7 +100,7 @@
                 <input type="text" name="fuerza" id="fuerza" class="form-control" placeholder="Fuerza (N)"/>
                 <input type="text" name="nombre2" id="pareja" class="form-control" placeholder="Pareja(nombre)"/>
                 <input type="text" name="apellido2" id="pareja2" class="form-control" placeholder="Pareja(apellido)"/>
-                <select class="form-select" name="sexo2" id="sexo2" required>
+                <select class="form-control" name="sexo2" id="sexo2"  required>
                     <option value="" disabled hidden selected>Sexo</option>
                     <% for(String s : listaGeneros) { %>
                     <option value="<%=s%>"><%=s%></option>
@@ -137,7 +137,7 @@
             </form>
 
         </center>
-        <div><button href="<%=request.getContextPath()%>/Supervivientes?action=borrar&id=<%=s.getHumanos().getNumero_identificación()%>" class="btn btn-tele border-start-1" type="submit" >Editar </button></div>
+        <div><button class="btn btn-tele border-start-1" type="submit" >Editar </button></div>
 
     </div>
 

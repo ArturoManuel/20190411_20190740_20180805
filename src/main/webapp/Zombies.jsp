@@ -40,7 +40,7 @@
     <table>
         <thead>
         <tr>
-            <td>ID</td><td>Nombre y Apellido </td><td>Sexo</td><th>Tiempo Infectado (horas)</th><th>Variente de Virus</th><th>Número de Víctimas </th><th>Tipo de Zombie</th>
+            <th>ID</th><th>Nombre y Apellido </th><th>Sexo</th><th>Tiempo Infectado (horas)</th><th>Variente de Virus</th><th>Número de Víctimas </th><th>Tipo de Zombie</th>
         </tr>
         </thead>
         <tr>
@@ -98,21 +98,63 @@
     <div><button class="btn btn-tele border-start-1" type="submit">Añadir </button></div>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
+<div>
+<br> <br><br><br>
+    <h1><b><font color="white"><mark>ESTADÍSTICAS</mark></font> </b></h1>
+<br>
 <center>
-    <h1><b><font color="white">ESTADÍSTICAS</font> </b></h1>
+    <div id="Zombieporcentaje" align="left">
+        <table  style="width: 90%">
+            <thead>
+            <tr>
+                <th>Zombies</th><th>Cantidad(%)</th> <th>Víctimas(%)</th>
+            </tr>
+            </thead>
+            <tr>
+                <td>Zombies Hombres</td><td>x %</td><td>x %</td>
+            </tr>
+            <tr>
+                <td>Zombies Mujeres</td><td>x %</td><td>x %</td>
+            </tr>
+            <tr>
+                <td>Zombies Demoledor</td><td>x %</td><td>x %</td>
+            </tr>
+            <tr>
+                <td>Zombies Rápido</td><td>x %</td><td>x %</td>
+            </tr>
+            <tr>
+                <td>Zombies niño</td><td>x %</td><td>x %</td>
+            </tr>
+            <tr>
+                <td>Otro</td><td>x %</td><td>x %</td>
+            </tr>
+
+        </table>
+    </div>
+    <br><br>
+    <div id="estadisticasVirus" align="left">
+        <table  style="width: 90%">
+            <thead>
+            <tr>
+                <th>Variantes de virus</th><th>Porcentaje (%)</th>
+            </tr>
+            </thead>
+            <tr>
+                <td>Variante 1</td><td>x %</td>
+            </tr>
+
+
+        </table>
+    </div>
+    <br><br><br>
+
 </center>
+</div></div>
+
+
+
+
+
 
 <script>
     function abrir() {
