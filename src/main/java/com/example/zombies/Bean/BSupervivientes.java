@@ -1,14 +1,19 @@
 package com.example.zombies.Bean;
 
-public class BSupervivientes extends BHumanos{
+public class BSupervivientes {
 
     private int peso;
     private int fuerza;
 
-    public BSupervivientes(long numero_identificación, String nombre, String apellido, String sexo, String estado, int peso, int fuerza) {
-        super(numero_identificación, nombre, apellido, sexo, estado);
+    private  BHumanos humanos;
+    private BHumanos pareja ;
+
+
+    public BSupervivientes(int peso, int fuerza, BHumanos humanos, BHumanos pareja) {
         this.peso = peso;
         this.fuerza = fuerza;
+        this.humanos = humanos;
+        this.pareja = pareja;
     }
 
     public int getPeso() {
@@ -25,5 +30,21 @@ public class BSupervivientes extends BHumanos{
 
     public void setFuerza(int fuerza) {
         this.fuerza = fuerza;
+    }
+
+    public BHumanos getHumanos() {
+        return humanos;
+    }
+
+    public void setHumanos(BHumanos humanos) {
+        this.humanos = humanos;
+    }
+
+    public BHumanos getPareja() {
+        return pareja;
+    }
+
+    public void setPareja(BHumanos pareja) {
+        this.pareja = pareja;
     }
 }
