@@ -221,5 +221,71 @@
         }
 
 
+
+         .ventana {
+
+             Background: #525252;
+             width:35%;
+             color:#dddddd;
+             font-family: Arial;
+             font-size: 18px;
+             text-align:center;
+             padding: 33px;
+             min-height: 350px;
+             border-radius: 10px;
+             top:25%;
+             position: fixed;
+             left:33%;
+             display: none;
+         }
+        .editar {
+
+            Background: #525252;
+            width:35%;
+            color:#dddddd;
+            font-family: Arial;
+            font-size: 18px;
+            text-align:center;
+            padding: 33px;
+            min-height: 250px;
+            border-radius: 10px;
+            top:30%;
+            position: fixed;
+            left:33%;
+            display: none;
+        }
+        .delete {
+
+            Background: #525252;
+            width:35%;
+            color:#dddddd;
+            font-family: Arial;
+            font-size: 18px;
+            text-align:center;
+            padding: 33px;
+            min-height: 100px;
+            border-radius: 10px;
+            left:33%;
+            top:200px;
+            position: fixed;
+            display: none;
+        }
+
+        #cerrar {
+            position:absolute;
+            right:4px;
+            top:2px
+        }
+        #cerrarEditar{
+            position:absolute;
+            right:4px;
+            top:2px
+        }
+        #aceptarDelete{
+            position:center;
+        }
+
+
+
     </style>
 </head>

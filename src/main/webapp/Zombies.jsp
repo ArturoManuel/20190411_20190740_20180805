@@ -60,24 +60,7 @@
     href="javascript:abrir()"
 >
     Añadir Superviviente</a>
-<div class="editar" id="edit">
-    <div id="cerrarEditar"><a href="javascript:cerrarEditar()"><img width="20px" height="20px" src="images/x.png"></a></div>
-    REGISTRAR
-    <center>
-        <form style="width: 70%">
-            <input type="text" id="nombres" class="form-control" placeholder="Nombres"/>
-            <input type="search" id="apellidos" class="form-control" placeholder="Apellidos"/>
-            <input type="text" id="id_super" class="form-control" placeholder="n° de ID"/>
-            <input type="text" id="tiempoInfectado" class="form-control" placeholder="tiempo infectado"/>
-            <input type="text" id="varianteDeVirus" class="form-control" placeholder="variante de virus"/>
-            <input type="text" id="NdeVictimas" class="form-control" placeholder="n° de victimas"/>
-            <input type="text" id="TipodeZombie" class="form-control" placeholder="Tipo de Zombie"/>
-        </form>
 
-    </center>
-    <div><button class="btn btn-tele border-start-1" type="submit">Añadir </button></div>
-
-</div>
 <center>
     <h1><b><font color="white">ESTADÍSTICAS</font> </b></h1>
 </center>

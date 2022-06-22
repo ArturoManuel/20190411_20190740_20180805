@@ -63,7 +63,7 @@
         <table>
             <thead>
             <tr>
-                <th>ID</th><th>Nombre y Apellido</th><th>Sexo</th><th>Peso</th><th>Fuerza</th><th>Pareja</th><th>Peso cargado</th><th>Objetos</th><th>Editar</th>
+                <th>ID</th><th>Nombre y Apellido</th><th>Sexo</th><th>Peso</th><th>Fuerza</th><th>Pareja</th><th>Peso cargado</th><th>Objetos</th><th>Editar</th><th>Eliminar</th>
             </tr>
             </thead>
             <%for (BSupervivientes s : listasupervivientes){%>
@@ -76,7 +76,8 @@
                 <td><%=s.getPareja().getNombre()+" "+s.getPareja().getApellido()%></td>
                 <td><%=s.getPeso_cargado()%></td>
                 <td> <a role="button" class="btn btn-tele border-start-1" href="ObjetosporSuperServlet"> ver objetos</a>  </td>
-                <td><a  type="submit" role="button" class="btn btn-tele border-start-1" href="javascript:abrirEditar()">Editar</a></td>
+                <td> <a  type="submit" role="button" class="btn btn-tele border-start-1" href="javascript:abrirEditar()">Editar</a></td>
+                <td> <a href="javascript:abrirDelete()"><img width="30px" height="30px" src="images/x.png"></a></td>
             </tr>
             <%}%>
         </table>
@@ -125,54 +126,21 @@
         <div><button class="btn btn-tele border-start-1" type="submit">Editar </button></div>
 
     </div>
+
+    <div class="delete" id="dele">
+        <center>
+            <h5>¿Está seguro que desea elimina al superviviente?</h5>
+                <br>
+        </center>
+        <div><a  type="submit"
+                 role="button"
+                 class="btn btn-tele border-start-1"
+                 href="javascript:cerrarDelete()"> Eliminar </a></div>
+
+    </div>
 </center>
 
 
-<style>
-   .ventana {
-
-       Background: #525252;
-       width:35%;
-       color:#dddddd;
-       font-family: Arial;
-       font-size: 18px;
-       text-align:center;
-       padding: 33px;
-       min-height: 350px;
-       border-radius: 10px;
-       position: absolute;
-       left:33%;
-       top:30%;
-       display: none;
-   }
-   .editar {
-
-       Background: #525252;
-       width:35%;
-       color:#dddddd;
-       font-family: Arial;
-       font-size: 18px;
-       text-align:center;
-       padding: 33px;
-       min-height: 250px;
-       border-radius: 10px;
-       position: absolute;
-       left:33%;
-       top:30%;
-       display: none;
-   }
-
-   #cerrar {
-       position:absolute;
-       right:4px;
-       top:2px
-   }
-   #cerrarEditar{
-       position:absolute;
-       right:4px;
-       top:2px
-   }
-</style>
 <script>
     function abrir() {
         document.getElementById("vent").style.display="block";
@@ -185,6 +153,12 @@
     }
     function cerrarEditar() {
         document.getElementById("edit").style.display="none";
+    }
+    function abrirDelete() {
+        document.getElementById("dele").style.display="block";
+    }
+    function cerrarDelete() {
+        document.getElementById("dele").style.display="none";
     }
 </script>
 
