@@ -1,30 +1,37 @@
 package com.example.zombies.Bean;
 
 public class BZombies {
-    private String tiempo_infectados;
+    private BHumanos humanos;
+    private int tiempo_infectados;
     private BVariante variante_virus;
     private int victimas;
     private String tipo_zombie;
-
-    private BHumanos humanos;
 
 
     public BZombies() {
     }
 
-    public BZombies(String tiempo_infectados, BVariante variante_virus, int victimas, String tipo_zombie, BHumanos humanos) {
+    public BZombies(BHumanos humanos, int tiempo_infectados, BVariante variante_virus, int victimas, String tipo_zombie) {
+        this.humanos = humanos;
         this.tiempo_infectados = tiempo_infectados;
         this.variante_virus = variante_virus;
         this.victimas = victimas;
         this.tipo_zombie = tipo_zombie;
+    }
+
+    public BHumanos getHumanos() {
+        return humanos;
+    }
+
+    public void setHumanos(BHumanos humanos) {
         this.humanos = humanos;
     }
 
-    public String getTiempo_infectados() {
+    public int getTiempo_infectados() {
         return tiempo_infectados;
     }
 
-    public void setTiempo_infectados(String tiempo_infectados) {
+    public void setTiempo_infectados(int tiempo_infectados) {
         this.tiempo_infectados = tiempo_infectados;
     }
 
@@ -51,12 +58,7 @@ public class BZombies {
     public void setTipo_zombie(String tipo_zombie) {
         this.tipo_zombie = tipo_zombie;
     }
-
-    public BHumanos getHumanos() {
-        return humanos;
-    }
-
-    public void setHumanos(BHumanos humanos) {
-        this.humanos = humanos;
-    }
 }
+
+
+

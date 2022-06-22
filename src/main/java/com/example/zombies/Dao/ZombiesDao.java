@@ -30,15 +30,15 @@ public class ZombiesDao extends BaseDao {
                     String nombre = rs.getString(1);
                     String apellido = rs.getString(2);
                     String sexo = rs.getString(3);
-                    long numeroid= rs.getLong(4);
-                    String tiempo_infectado = rs.getString(5);
+                    long numeroid=rs.getLong(4);
+                    int tiempo= rs.getInt(5);
                     String variante_nombre = rs.getString(6);
                     int victimas= rs.getInt(7);
                     String tipo_zombie = rs.getString(8);
 
                     BVariante variante = new BVariante(variante_nombre);
                     BHumanos humano= new BHumanos(numeroid,nombre,apellido,sexo);
-                    BZombies zombies = new  BZombies(tiempo_infectado,variante,victimas,tipo_zombie,humano);
+                    BZombies zombies = new  BZombies(humano,tiempo,variante,victimas,tipo_zombie);
 
                     litazombies.add(zombies);
                     System.out.println(zombies.getTiempo_infectados());

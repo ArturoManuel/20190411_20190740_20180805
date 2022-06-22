@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="com.example.zombies.Bean.BZombies" %>
+<jsp:useBean id="listaszombies" scope="request" type="java.util.ArrayList<com.example.zombies.Bean.BZombies>"/>
 <html>
 <head>
     <meta charset="utf-8">
@@ -42,16 +44,19 @@
         <tr>
             <th>ID</th><th>Nombre y Apellido </th><th>Sexo</th><th>Tiempo Infectado (horas)</th><th>Variente de Virus</th><th>Número de Víctimas </th><th>Tipo de Zombie</th>
         </tr>
-        </thead>
-        <tr>
-            <td>idk</td><td>idk</td><td>idk</td> <td>xdd</td><td>idk</td><td>idk</td><td>idk</td>
-        </tr>
-        <tr>
-            <td>idk</td><td>idk</td><td>idk</td><td>xdd</td><td>idk</td><td>idk</td><td>idk</td>
-        </tr>
-        <tr>
-            <td>idk</td><td>idk</td><td>idk</td><td>xdd</td><td>idk</td><td>idk</td><td>idk</td>
-        </tr>
+            <tr>
+                    <%for (BZombies s : listaszombies){%>
+            <tr>
+                <td ><%=s.getHumanos().getNumero_identificación()%></td>
+                <td><%=s.getHumanos().getNombre() +""+ s.getHumanos().getApellido()%></td>
+                <td><%=s.getHumanos().getSexo()%></td>
+                <td><%=s.getTiempo_infectados()%></td>
+                <td><%=s.getVariante_virus().getNombre()%></td>
+                <td><%=s.getVictimas()%></td>
+                <td><%=s.getTipo_zombie()%></td>
+
+            </tr>
+                <%}%>
     </table>
 </div>
 <center>
