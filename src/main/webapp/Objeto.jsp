@@ -26,49 +26,14 @@
     <jsp:param name="page" value=""/>
 </jsp:include>
 <body>
-<STYLE TYPE="text/css">
-    body{
-        font-family: Arial;
-    }
-    #main-container{
-        margin: 10px ;
-        width: 1200px;
-    }
-    table{
-        background-color: white;
-        text-align: center;
-        border-collapse: collapse;
-        width: 100%;
-        position: static;
-        left: 100%;
-        margin-left: 75px;
-        top: 300%;
-        margin-top: 1px;
-    }
-    th, td{
-        padding: 20px;
-    }
-    thead{
-        background-color: #1db954;
-        border-bottom: solid 5px #0F362D;
-        color: white;
-    }
-    tr:nth-child(even){
-        background-color: #ddd;
-    }
-    tr:hover td{
-        background-color: #57f77c;
-        color: white;
-    }
 
-</STYLE>
 <br>
 <br> <br>
 <br> <br>
 <br> <br>
 
 <center>
-    <h1><b><font color="white">LISTA DE SUPERVIVIENTES</font> </b></h1>
+    <h2><b><font color="white"><mark >LISTA DE OBJETOS</mark></font> </b></h2>
 </center>
 <div id="main-container" align="left">
     <table>

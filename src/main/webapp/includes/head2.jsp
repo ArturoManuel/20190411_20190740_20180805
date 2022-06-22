@@ -79,5 +79,147 @@
         .fila-yellow {
             background-color: #f0e01f91;
         }
+
+
+        body{
+            font-family: Arial;
+        }
+        #main-container{
+            margin: 10px ;
+            width: 1200px;
+        }
+        table{
+            background-color: white;
+            text-align: center;
+            border-collapse: collapse;
+            width: 100%;
+            position: static;
+            left: 100%;
+            margin-left: 75px;
+            top: 300%;
+            margin-top: 1px;
+        }
+        th, td{
+            padding: 20px;
+        }
+        thead{
+            background-color: #1db954;
+            border-bottom: solid 5px #0F362D;
+            color: white;
+        }
+        tr:nth-child(even){
+            background-color: #ddd;
+        }
+        tr:hover td{
+            background-color: #57f77c;
+            color: white;
+        }
+
+        .btn {
+            display: inline-block;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            text-align: center;
+            text-decoration: none;
+            vertical-align: middle;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            border-radius: .25rem;
+            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
+        }
+        /*Boton Telefarma*/
+
+        .btn-tele {
+            border-color: #1db954;
+            background-color: #1db954;
+            color: white;
+        }
+
+        .btn-tele:hover {
+            color: #fff;
+            background-color: #131212;
+            border-color: #131212;
+        }
+
+        .btn-check:focus + .btn-tele,
+        .btn-tele:focus {
+            color: #fff;
+            background-color: #131212;
+            border-color: #1db954;
+            box-shadow: 0 0 0 0.2rem #57f77c;
+        }
+
+        .btn-check:active + .btn-tele,
+        .btn-check:checked + .btn-tele,
+        .btn-tele.active,
+        .btn-tele:active,
+        .show > .btn-tele.dropdown-toggle {
+            color: #fff;
+            background-color: #1db954;
+            border-color: #1db954;
+        }
+
+        .btn-check:active + .btn-tele:focus,
+        .btn-check:checked + .btn-tele:focus,
+        .btn-tele.active:focus,
+        .btn-tele:active:focus,
+        .show > .btn-tele.dropdown-toggle:focus {
+            box-shadow: 0 0 0 0.2rem #57f77c;
+        }
+
+        .btn-tele.disabled,
+        .btn-tele:disabled {
+            color: #fff;
+            border-color: #1db954;
+            background-color: #1db954;
+        }
+
+        .btn-tele-inverso {
+            background-color: white;
+            color: #57f77c;
+        }
+
+        .btn-tele-inverso:hover {
+            color: #1db954;
+        }
+
+        .btn-check:focus + .btn-tele-inverso,
+        .btn-tele-inverso:focus {
+            color: #1db954;
+        }
+
+        .btn-check:active + .btn-tele-inverso,
+        .btn-check:checked + .btn-tele-inverso,
+        .btn-tele-inverso.active,
+        .btn-tele-inverso:active,
+        .show > .btn-tele-inverso.dropdown-toggle {
+            color:#1db954;
+        }
+
+        .btn-check:active + .btn-tele-inverso:focus,
+        .btn-check:checked + .btn-tele-inverso:focus,
+        .btn-tele-inverso.active:focus,
+        .btn-tele-inverso:active:focus,
+        .show > .btn-tele-inverso.dropdown-toggle:focus {
+            box-shadow: 0 0 0 0.2rem #57f77c;
+        }
+
+        /*Desactivar sombra de botones*/
+
+        .btn:focus,
+        .btn:active,
+        .page-link:focus {
+            box-shadow: none !important;
+            outline: 0;
+        }
+
+
     </style>
 </head>
