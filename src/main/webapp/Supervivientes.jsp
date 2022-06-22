@@ -48,11 +48,9 @@
             <form class="input-group" align="center" action="<%=request.getContextPath()%>/Supervivientes?action=filtrar">
                 <select style="width: 16%" class="form-select" name="filtrado" id="filtrado" required>
                     <option value="" disabled hidden selected>Sexo</option>
-                    <% for(String s : listaGeneros) { %>
-                    <option  value="<%=s%>"><%=s%></option>
-                    <% } %>
+                    <option  value="F">Mujer</option>
+                    <option  value="H">Hombre</option>
                 </select>
-
                 <button class="btn btn-tele border-start-1" type="submit">Añadir </button>
             </form>
 
@@ -69,7 +67,7 @@
 
             <%for (BSupervivientes s : listasupervivientes){%>
             <tr>
-                <td><%=s.getHumanos().getNumero_identificación()%></td>
+                <td ><%=s.getHumanos().getNumero_identificación()%></td>
                 <td><%=s.getHumanos().getNombre()+" "+s.getHumanos().getApellido()%></td>
                 <td><%=s.getHumanos().getSexo()%></td>
                 <td><%=s.getPeso()%></td>
@@ -78,7 +76,7 @@
                 <td><%=s.getPeso_cargado()%></td>
                 <td> <a role="button" class="btn btn-tele border-start-1" href="ObjetosporSuperServlet"> ver objetos</a>  </td>
                 <td> <a  type="submit" role="button" class="btn btn-tele border-start-1" href="javascript:abrirEditar()">Editar</a></td>
-                <td> <a href="javascript:abrirDelete()"><img width="30px" height="30px" src="images/x.png"></a></td>
+                <td><a href="<%=request.getContextPath()%>/Supervivientes?action=borrar&id=<%=s.getHumanos().getNumero_identificación()%>">Borrar</a></td>
             </tr>
             <%}%>
         </table>
@@ -139,7 +137,7 @@
             </form>
 
         </center>
-        <div><button class="btn btn-tele border-start-1" type="submit">Editar </button></div>
+        <div><button href="<%=request.getContextPath()%>/Supervivientes?action=borrar&id=<%=s.getHumanos().getNumero_identificación()%>" class="btn btn-tele border-start-1" type="submit" >Editar </button></div>
 
     </div>
 

@@ -19,20 +19,36 @@ public class SupervivienteServlet extends HttpServlet {
 
         String action = request.getParameter("action") == null ? "listar" : request.getParameter("action");
         SupervivientesDao supervivientesDao = new SupervivientesDao();
+        RequestDispatcher view;
         switch (action){
-            case "listar" ->{
+            case "listar":
                 ArrayList<BSupervivientes> listasupervivientes= supervivientesDao.listaSupervivientes();
                 ArrayList<String> listaGeneros = supervivientesDao.listaGeneros();
                 request.setAttribute("listasupervivientes",listasupervivientes);
                 request.setAttribute("listaGeneros",listaGeneros);
-                RequestDispatcher view =request.getRequestDispatcher("Supervivientes.jsp");
+                view =request.getRequestDispatcher("Supervivientes.jsp");
                 view.forward(request,response);
+                break;
 
-            }
-            case "mostrar"->{
-                RequestDispatcher view =request.getRequestDispatcher("Supervivientes.jsp");
+            case "mostrar":
+                view =request.getRequestDispatcher("Supervivientes.jsp");
                 view.forward(request,response);
-            }
+                break;
+
+            case "borrar":
+                long id = Long.parseLong(request.getParameter("id"));
+                System.out.println("aqui llegamos");
+                supervivientesDao.delete(id);
+                response.sendRedirect(request.getContextPath() + "/Supervivientes");
+
+                break;
+            case "filtrar":
+                String genero = request.getParameter("filtrado");
+                ArrayList<BSupervivientes> listasupervivientes2=supervivientesDao.listaFiltrada(genero);
+                request.setAttribute("listasupervivientes",listasupervivientes2);
+                view =request.getRequestDispatcher("Supervivientes.jsp");
+                view.forward(request,response);
+                break;
         }
     }
 
@@ -45,6 +61,30 @@ public class SupervivienteServlet extends HttpServlet {
         RequestDispatcher view;
 
         switch (action) {
+            case "filtrar":
+                String genero = request.getParameter("filtrado");
+                ArrayList<BSupervivientes> listasupervivientes2=supervivientesDao.listaFiltrada(genero);
+                request.setAttribute("listasupervivientes",listasupervivientes2);
+                view =request.getRequestDispatcher("Supervivientes.jsp");
+                view.forward(request,response);
+                break;
+
+            case "borrar":
+                long id = Long.parseLong(request.getParameter("id"));
+                System.out.println("aqui llegamos");
+                supervivientesDao.delete(id);
+                response.sendRedirect(request.getContextPath() + "/Supervivientes");
+
+                break;
+            case "listar":
+                ArrayList<BSupervivientes> listasupervivientes= supervivientesDao.listaSupervivientes();
+                ArrayList<String> listaGeneros = supervivientesDao.listaGeneros();
+                request.setAttribute("listasupervivientes",listasupervivientes);
+                request.setAttribute("listaGeneros",listaGeneros);
+                view =request.getRequestDispatcher("Supervivientes.jsp");
+                view.forward(request,response);
+                break;
+
             case "añadir":
                 String nombre = request.getParameter("nombre");
                 String apellido = request.getParameter("apellido");
@@ -75,7 +115,7 @@ public class SupervivienteServlet extends HttpServlet {
                     System.out.println("error");
                 }
 
-                response.sendRedirect(request.getContextPath() + "/Supervivientes?action=listar");
+                response.sendRedirect(request.getContextPath() + "/Supervivientes");
 
                 break;
             case "editar":
@@ -86,57 +126,11 @@ public class SupervivienteServlet extends HttpServlet {
                     response.sendRedirect(request.getContextPath() + "/supervivientes?action=listar&resultado=exito1");
                 }
                 break;
-            case "eliminar":
-                try {
-                    long numeroid = Long.parseLong(request.getParameter("numeroid"));
-                    supervivientesDao.delete(numeroid);
-                    response.sendRedirect(request.getContextPath() + "/Supervivientes?action=listar");
-                } catch (Exception e) {
-                    response.sendRedirect(request.getContextPath() + "/supervivientes?action=listar&resultado=exito1");
-                }
-                break;
-            case "filtrar":
-                try {
-                    String genero = request.getParameter("filtrado");
-                    ArrayList<BSupervivientes> listasupervivientes= supervivientesDao.listaFiltrada(genero);
-                    ArrayList<String> listaGeneros = supervivientesDao.listaGeneros();
-                    request.setAttribute("listasupervivientes",listasupervivientes);
-                    request.setAttribute("listaGeneros",listaGeneros);
-                    view =request.getRequestDispatcher("Supervivientes.jsp");
-                    view.forward(request,response);
-
-                } catch (Exception e) {
-                    response.sendRedirect(request.getContextPath() + "/Supervivientes?action=listar&resultado=error");
-                }
-                break;
 
 
         }
     }
 
-
-    public BHumanos leerParametrosRequest(HttpServletRequest request) throws IOException, ServletException {
-        String nombre = request.getParameter("nombre");
-        String apellido = request.getParameter("apellido");
-        String sexo = request.getParameter("sexo");
-        String estado= "zombies";
-        System.out.println(nombre);
-        return new BHumanos(nombre,apellido,sexo,estado);
-    }
-    public BHumanos leerParametrosRequest2(HttpServletRequest request) throws IOException, ServletException {
-        String nombre = request.getParameter("nombre2");
-        String apellido = request.getParameter("apellido2");
-        String sexo = request.getParameter("sexo2");
-        String estado= "zombies";
-        System.out.println(nombre);
-        return new BHumanos(nombre,apellido,sexo,estado);
-    }
-    public BSupervivientes leerParametrosRequest3(HttpServletRequest request) throws IOException, ServletException {
-        double peso = Double.parseDouble(request.getParameter("peso"));
-        int fuerza = Integer.parseInt(request.getParameter("fuerza"));
-        System.out.println(peso);
-        return new BSupervivientes(peso,fuerza);
-    }
 
 
 }
