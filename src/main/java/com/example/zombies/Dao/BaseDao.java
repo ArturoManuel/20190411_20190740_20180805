@@ -4,8 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class BaseDao {
-    public  Connection getConnection() throws SQLException {
+public  abstract class BaseDao {
+    public Connection getConnection() throws SQLException {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
@@ -14,7 +14,7 @@ public class BaseDao {
 
         final String user = "root";
         final String pass = "root";
-        final String url = "jdbc:mysql://localhost:3306/lab9";
+        final String url = "jdbc:mysql://localhost:3306/dbl9?serverTimezone=America/Lima";
 
         return DriverManager.getConnection(url, user, pass);
     }

@@ -8,6 +8,9 @@ public class BHumanos {
     private String estado;
 
 
+    public BHumanos() {
+    }
+
     public BHumanos(int numero_identificación, String nombre, String apellido, String sexo, String estado) {
         this.numero_identificación = numero_identificación;
         this.nombre = nombre;
