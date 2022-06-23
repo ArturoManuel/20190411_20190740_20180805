@@ -1,6 +1,7 @@
 package com.example.zombies.Bean;
 
 public class BObjetos {
+    private int id_objeto;
     private String nombre;
     private int cantidad;
     private int peso;
@@ -11,6 +12,14 @@ public class BObjetos {
         this.cantidad = cantidad;
         this.peso = peso;
         this.tipo = tipo;
+    }
+
+    public int getId_objeto() {
+        return id_objeto;
+    }
+
+    public void setId_objeto(int id_objeto) {
+        this.id_objeto = id_objeto;
     }
 
     public String getNombre() {

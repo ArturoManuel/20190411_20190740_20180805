@@ -6,6 +6,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="com.example.zombies.Bean.BObjetos" %>
+
+<jsp:useBean id="listasobjetos" scope="request" type="java.util.ArrayList<com.example.zombies.Bean.BObjetos>"/>
+
 <html>
 <head>
     <meta charset="utf-8">
@@ -38,6 +42,7 @@
 
 <div id="main-container" >
     <center>
+
     <table>
         <thead>
         <tr>
@@ -45,15 +50,19 @@
         </tr>
         </thead>
         <tr>
-            <td>idk</td><td>idk</td><td><a  type="submit" role="button" class="btn btn-tele border-start-1" href="javascript:abrirVacuna()">Vacuna</a></td> </td><td> <a  type="submit" role="button" class="btn btn-tele border-start-1" href="javascript:abrirEditar()">Editar</a></td>
-        </tr>
+                <%for (BObjetos o : listasobjetos){%>
         <tr>
-            <td>idk</td><td>idk</td><td>normal</td><td> <a  type="submit" role="button" class="btn btn-tele border-start-1" href="javascript:abrirEditar()">Editar</a></td>
+
+        <td><%=o.getNombre()%></td>
+        <td><%=o.getCantidad()%></td>
+        <td><%=o.getPeso()%></td>
+        <td><%=o.getTipo()%></td>
         </tr>
-        <tr>
-            <td>idk</td><td>idk</td><td><a  type="submit" role="button" class="btn btn-tele border-start-1" href="javascript:abrirVacuna()">Vacuna</a></td><td> <a  type="submit" role="button" class="btn btn-tele border-start-1" href="javascript:abrirEditar()">Editar</a></td>
-        </tr>
-    </table></center>
+            <%}%>
+
+    </table>
+
+    </center>
 </div>
 <div class="editar" id="edit">
     <div id="cerrarEditar"><a href="javascript:cerrarEditar()"><img width="20px" height="20px" src="images/x.png"></a></div>
@@ -117,21 +126,7 @@
 
     </center>
     <div></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
 
 <script>
     function abrir() {
