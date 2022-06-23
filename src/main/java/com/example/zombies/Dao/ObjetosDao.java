@@ -39,6 +39,24 @@ public class ObjetosDao extends BaseDao{
         return litasobjetos;
     }
 
+    public ArrayList<BObjetos> efectividades() {
+
+        ArrayList<BObjetos> litasobjetos = new ArrayList<>();
+        try (Connection conn = this.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql_select);) {
+            try (ResultSet rs = pstmt.executeQuery()) {
+                System.out.println(rs);
+                while (rs.next()) {
+
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return litasobjetos;
+    }
+
 
 
 

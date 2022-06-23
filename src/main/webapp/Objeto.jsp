@@ -45,7 +45,7 @@
     <table>
         <thead>
         <tr>
-            <th>Nombre del objeto</th><th>Cantidad</th><th>Peso/th><th>Es Vacuna?</th>
+            <th>Nombre del objeto</th><th>Cantidad</th><th>Peso<th>Es Vacuna?</th>
         </tr>
         </thead>
         <tr>
