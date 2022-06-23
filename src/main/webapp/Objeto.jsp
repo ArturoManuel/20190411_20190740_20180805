@@ -7,7 +7,6 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.example.zombies.Bean.BObjetos" %>
-
 <jsp:useBean id="listasobjetos" scope="request" type="java.util.ArrayList<com.example.zombies.Bean.BObjetos>"/>
 
 <html>
@@ -46,7 +45,7 @@
     <table>
         <thead>
         <tr>
-            <th>Nombre del objeto</th><th>Peso</th><th>Tipo de Vacuna</th><th>Editar</th>
+            <th>Nombre del objeto</th><th>Cantidad</th><th>Peso/th><th>Es Vacuna?</th>
         </tr>
         </thead>
         <tr>
@@ -115,12 +114,17 @@
             <input type="text" name="objeto" id="objeto" class="form-control" placeholder="Objeto"/><br>
             <input type="text" name="pesoObj" id="pesoObj" class="form-control" placeholder="peso(kg)"/><br>
             <select class="form-control" name="obejto" id="obejto"  required>
-            <option value="" disabled hidden selected>Tipo de Vacuna</option>
-                <option >vacuna</option>
-                <option >normal</option>
+            <option value="" disabled hidden selected>¿Es una vacuna?</option>
+                <option >si</option>
+                <option >no</option>
             </select><br>
-            <h6>Solo si es vacuna, llenar su efectividad:</h6>
-            <input type="text" id="efect" class="form-control" placeholder="Efectividad"/><br>
+            <h6>Solo si es vacuna, llenar sus efectividades:</h6>
+            <input type="text" id="efect1" class="form-control" placeholder="vs demoledor"/><br>
+            <input type="text" id="efect2" class="form-control" placeholder="vs niño"/><br>
+            <input type="text" id="efect3" class="form-control" placeholder="vs rapido"/><br>
+            <input type="text" id="efect4" class="form-control" placeholder="vs normal"/><br>
+            <input type="text" id="efect5" class="form-control" placeholder="vs otro"/><br>
+
             <button class="btn btn-tele border-start-1" type="submit">Añadir </button>
         </form>
 
