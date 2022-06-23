@@ -44,6 +44,7 @@
         <tr>
             <th>ID</th><th>Nombre y Apellido </th><th>Sexo</th><th>Tiempo Infectado (horas)</th><th>Variente de Virus</th><th>Número de Víctimas </th><th>Tipo de Zombie</th>
         </tr>
+        </thead>
             <tr>
                     <%for (BZombies s : listaszombies){%>
             <tr>
