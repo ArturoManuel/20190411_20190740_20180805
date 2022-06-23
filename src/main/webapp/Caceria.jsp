@@ -73,20 +73,20 @@
 <h3><b><font color="white"><mark>Seleccionar que zombie ataca a que humano: </mark></font> </b></h3>
 <br>
 <center>
-<select class="form-control" name="Zombie" id="zombie"Style="width: 50%" required >
-    <option value="" disabled hidden selected>Elige un Zombie</option>
-    <option value="">Zombie 1</option>
-    <option value="">Zombie 2 </option>
-</select>
+    <select class="form-control" name="zombie"  required>
+        <option value="" disabled hidden selected>zombie</option>
+        <% for(BZombies s : listaszombies) { %>
+        <option value="<%=s%>"><%=s.getHumanos().getNombre()%></option>
+        <% } %>
+    </select>
 
-<br>
-<select class="form-control" name="Super" id="super" Style="width: 50%" required>
-    <option value="" disabled hidden selected>Elige un Superviviente</option>
-    <option value="">Superviviente 1</option>
-    <option value="">Superviviente 2 </option>
-</select>
-
-<br>
+    <br>
+    <select class="form-control" name="supervivientes" required>
+        <option value="" disabled hidden selected>supervivientes</option>
+        <% for(BSupervivientes s : listasupervivientes) { %>
+        <option value="<%=s%>"><%=s.getHumanos().getNombre()%></option>
+        <% } %>
+    </select>
 <button class="btn btn-tele border-start-1" type="submit">Atacar </button>
 </center>
 <br><br><br>
