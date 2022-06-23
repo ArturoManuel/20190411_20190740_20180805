@@ -5,9 +5,15 @@
   Time: 16:42
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page import="com.example.zombies.Bean.BZombies" %>
+<%@ page import="com.example.zombies.Bean.BSupervivientes" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.lang.String" %>
+<jsp:useBean id="listasupervivientes" scope="request" type="java.util.ArrayList<com.example.zombies.Bean.BSupervivientes>"/>
+<jsp:useBean id="listaszombies" scope="request" type="java.util.ArrayList<com.example.zombies.Bean.BZombies>"/>
 <html>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <meta charset="utf-8">
@@ -45,6 +51,16 @@
         <tr>
             <th>Suervivientes</th><th>Zombies</th>
         </tr>
+            <tr><%for (BZombies s : listaszombies){%>
+            <tr>
+                <td><%=s.getHumanos().getNombre() +""+ s.getHumanos().getApellido()%></td>
+            </tr>
+            <%}%>
+            <%for (BSupervivientes s : listasupervivientes){%>
+            <tr>
+                <td><%=s.getHumanos().getNombre()+" "+s.getHumanos().getApellido()%></td>
+            </tr>
+            <%}%>
         </thead>
         <tr>
             <td>nombres y apellidos</td><td>nombes y apellidos</td>
