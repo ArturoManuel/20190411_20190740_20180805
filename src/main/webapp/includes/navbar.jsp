@@ -26,7 +26,7 @@
                    <a class="nav-link <%=request.getParameter("page").equals("Objetos")? "active": "" %>" href="<%=request.getContextPath()%>/Objetos"><b>Objetos</b></a>
                </li>
                <li class="nav-item">
-                   <a class="nav-link <%=request.getParameter("page").equals("Cacería")? "active": "" %>" href="<%=request.getContextPath()%>/Objetos"><b>Cacería</b></a>
+                   <a class="nav-link <%=request.getParameter("page").equals("Cacería")? "active": "" %>" href="<%=request.getContextPath()%>/Caceria"><b>Cacería</b></a>
                </li>
            </ul>
 
