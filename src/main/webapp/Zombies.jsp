@@ -127,6 +127,7 @@
             <%}%>
 
         </table>
+        <br><br>
     </div>
     <div id="Zombieporcentaje" align="left">
         <table  style="width: 90%">
@@ -141,7 +142,6 @@
                 <td ><%=s.getProcentaje()*100%></td>
             </tr>
             <%}%>
-
         </table>
     </div>
     <br><br>

@@ -49,22 +49,22 @@
     <table>
         <thead>
         <tr>
-            <th>Suervivientes</th><th>Zombies</th>
+            <th>Zombies</th>
         </tr>
-            <tr><%for (BZombies s : listaszombies){%>
-            <tr>
-                <td><%=s.getHumanos().getNombre() +""+ s.getHumanos().getApellido()%></td>
-            </tr>
-            <%}%>
-            <%for (BSupervivientes s : listasupervivientes){%>
-            <tr>
-                <td><%=s.getHumanos().getNombre()+" "+s.getHumanos().getApellido()%></td>
-            </tr>
-            <%}%>
         </thead>
+
+            <%for (BZombies s : listaszombies){%><tr>
+            <td><%=s.getHumanos().getNombre() +""+ s.getHumanos().getApellido()%></td>
+    </tr>
+            <%}%>
+       <thead> <tr><th>Supervivientes</th></tr></thead>
+            <%for (BSupervivientes s : listasupervivientes){%>
         <tr>
-            <td>nombres y apellidos</td><td>nombes y apellidos</td>
+            <td><%=s.getHumanos().getNombre()+" "+s.getHumanos().getApellido()%></td>
         </tr>
+            <%}%>
+
+
 
     </table></center>
 </div>
