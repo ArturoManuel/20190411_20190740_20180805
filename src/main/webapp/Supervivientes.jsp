@@ -50,8 +50,9 @@
                     <option value="" disabled hidden selected>Sexo</option>
                     <option  value="F">Mujer</option>
                     <option  value="H">Hombre</option>
+                    <option  value="O">Otro</option>
                 </select>
-                <button class="btn btn-tele border-start-1" type="submit">Añadir </button>
+                <button class="btn btn-tele border-start-1" type="submit">Elegir </button>
             </form>
 
     </div>
