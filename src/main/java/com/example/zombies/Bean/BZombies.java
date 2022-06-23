@@ -6,7 +6,35 @@ public class BZombies {
     private BVariante variante_virus;
     private int victimas;
     private String tipo_zombie;
+    private double promedio;
 
+    private double procentaje;
+
+    public BZombies(BHumanos humanos, double procentaje) {
+        this.humanos = humanos;
+        this.procentaje = procentaje;
+    }
+
+    public double getProcentaje() {
+        return procentaje;
+    }
+
+    public void setProcentaje(double procentaje) {
+        this.procentaje = procentaje;
+    }
+
+    public BZombies(String tipo_zombie, double promedio) {
+        this.tipo_zombie = tipo_zombie;
+        this.promedio = promedio;
+    }
+
+    public double getPromedio() {
+        return promedio;
+    }
+
+    public void setPromedio(double promedio) {
+        this.promedio = promedio;
+    }
 
     public BZombies() {
     }

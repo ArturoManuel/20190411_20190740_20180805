@@ -16,11 +16,30 @@ public class ZombiesServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+
+        String action = request.getParameter("action") == null ? "" : request.getParameter("action");
         ZombiesDao zombiesDao = new ZombiesDao();
-        ArrayList<BZombies> listaszombies= zombiesDao.listasZombies();
-        request.setAttribute("listaszombies",listaszombies);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("Zombies.jsp");
-        requestDispatcher.forward(request,response);
+        RequestDispatcher view;
+        switch (action) {
+            case "":
+                ArrayList<BZombies> listaszombies= zombiesDao.listasZombies();
+                ArrayList<BZombies> listapromedios = zombiesDao.promedio_por_tipo();
+                ArrayList<BZombies> listagenero = zombiesDao.listasZombiesgenero();
+
+                request.setAttribute("listapromedio",listapromedios);
+                request.setAttribute("listaszombies",listaszombies);
+                request.setAttribute("listagenero",listagenero);
+                view = request.getRequestDispatcher("Zombies.jsp");
+                view.forward(request,response);
+                break;
+            case "listado":
+                view = request.getRequestDispatcher("Zombies.jsp");
+                view.forward(request,response);
+                break;
+
+
+        }
+
     }
 
     @Override

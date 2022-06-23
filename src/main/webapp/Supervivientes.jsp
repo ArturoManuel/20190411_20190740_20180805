@@ -98,11 +98,11 @@
                     <option value="<%=s%>"><%=s%></option>
                     <% } %>
                 </select>
-                <input type="text" name="peso" id="peso" class="form-control" placeholder="Peso (kg)"/>
-                <input type="text" name="fuerza" id="fuerza" class="form-control" placeholder="Fuerza (N)"/>
+                <input type="int" name="peso" id="peso" class="form-control" placeholder="Peso (kg)"required/>
+                <input type="int" name="fuerza" id="fuerza" class="form-control" placeholder="Fuerza (N)"required/>
                 <input type="text" name="nombre2" id="pareja" class="form-control" placeholder="Pareja(nombre)"/>
                 <input type="text" name="apellido2" id="pareja2" class="form-control" placeholder="Pareja(apellido)"/>
-                <select class="form-control" name="sexo2" id="sexo2"  required>
+                <select class="form-control" name="sexo2" id="sexo2"  >
                     <option value="" disabled hidden selected>Sexo</option>
                     <% for(String s : listaGeneros) { %>
                     <option value="<%=s%>"><%=s%></option>
@@ -132,9 +132,9 @@
         <center>
             <form style="width: 70%">
 
-                <input type="text" id="nombresEdit" class="form-control" placeholder="Nombres"/>
-                <input type="text" id="pesoEdit" class="form-control" placeholder="Peso (kg)"/>
-                <input type="text" id="fuerzaEdit" class="form-control" placeholder="Fuerza (N)"/>
+                <input type="text" id="nombresEdit" class="form-control" placeholder="Nombres"required/>
+                <input type="int" id="pesoEdit" class="form-control" placeholder="Peso (kg)"required/>
+                <input type="int" id="fuerzaEdit" class="form-control" placeholder="Fuerza (N)" required/>
                 <input type="text" id="parejaEdit" class="form-control" placeholder="Pareja(nombre y apellido)"/>
             </form>
 

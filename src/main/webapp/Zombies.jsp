@@ -8,6 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.example.zombies.Bean.BZombies" %>
 <jsp:useBean id="listaszombies" scope="request" type="java.util.ArrayList<com.example.zombies.Bean.BZombies>"/>
+<jsp:useBean id="listapromedio" scope="request" type="java.util.ArrayList<com.example.zombies.Bean.BZombies>"/>
+<jsp:useBean id="listagenero" scope="request" type="java.util.ArrayList<com.example.zombies.Bean.BZombies>"/>
+
 <html>
 <head>
     <meta charset="utf-8">
@@ -108,31 +111,35 @@
     <h1><b><font color="white"><mark>ESTADÍSTICAS</mark></font> </b></h1>
 <br>
 <center>
+    <div id="Zombieporcentajeportipo" align="left">
+        <table  style="width: 90%">
+            <thead>
+                <tr>
+                    <th>Zombies</th><th>Promedio de Víctimas</th>
+                </tr>
+            </thead>
+            <%for (BZombies s : listapromedio){%>
+            <tr>
+                <td ><%=s.getTipo_zombie()%></td>
+                <td ><%=s.getPromedio()%></td>
+            </tr>
+            <%}%>
+
+        </table>
+    </div>
     <div id="Zombieporcentaje" align="left">
         <table  style="width: 90%">
             <thead>
             <tr>
-                <th>Zombies</th><th>Cantidad(%)</th> <th>Víctimas(%)</th>
+                <th>Zombies</th><th>Promedio de Víctimas(%)</th>
             </tr>
             </thead>
+            <%for (BZombies s : listagenero){%>
             <tr>
-                <td>Zombies Hombres</td><td>x %</td><td>x %</td>
+                <td ><%=s.getHumanos().getSexo()%></td>
+                <td ><%=s.getProcentaje()*100%></td>
             </tr>
-            <tr>
-                <td>Zombies Mujeres</td><td>x %</td><td>x %</td>
-            </tr>
-            <tr>
-                <td>Zombies Demoledor</td><td>x %</td><td>x %</td>
-            </tr>
-            <tr>
-                <td>Zombies Rápido</td><td>x %</td><td>x %</td>
-            </tr>
-            <tr>
-                <td>Zombies niño</td><td>x %</td><td>x %</td>
-            </tr>
-            <tr>
-                <td>Otro</td><td>x %</td><td>x %</td>
-            </tr>
+            <%}%>
 
         </table>
     </div>
